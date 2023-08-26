@@ -1,4 +1,11 @@
-import Image from 'next/image'
+import { Metadata } from 'next';
+import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Análisis de Ciclo de Vida | Instituto Mexicano del Cemento y del Concreto A.C.',
+  description:
+    'Análisis de Ciclo de Vida, Instituto Mexicano del Cemento y del Concreto A.C.',
+};
 
 export default function Home() {
   return (
