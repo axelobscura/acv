@@ -14,7 +14,19 @@ export default function Home() {
             height={37}
             priority
           />
-          <p className='p-3'><small>Instituto Mexicano del Cemento y del Concreto A.C.</small></p>
+          <p className='p-3 text-sm'><small>Instituto Mexicano del Cemento y del Concreto A.C.</small></p>
+          <button className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5">
+            Emisiones de Gases de Efecto Invernadero
+          </button>
+          <button className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5">
+            Generación de Residuos
+          </button>
+          <button className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5">
+            Consumo de Agua
+          </button>
+          <button className="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5">
+            Resultados
+          </button>
         </div>
         <div className="basis-1/6"></div>
       </div>
