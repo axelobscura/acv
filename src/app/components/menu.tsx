@@ -39,7 +39,7 @@ export default function Menu() {
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={ele.link} key={ele.nombre}>
                     <button 
-                        className="font-orbitron bg-customVerde hover:bg-green-800 text-gray-900 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5"
+                        className="font-orbitron bg-customVerde hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5"
                     >
                         <Tag/>
                         {ele.nombre}
