@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react'
 import Menu from "../components/menu"
 
+
+
 export default function Emisiones() {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)
@@ -18,7 +20,11 @@ export default function Emisiones() {
     if (isLoading) return <p>Loading...</p>
     if (!data) return <p>No profile data</p>
 
-    console.log(data);
+    type Employee = {
+        message: string;
+    };
+
+    let employee: Employee | any = data;
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-10">
@@ -29,7 +35,7 @@ export default function Emisiones() {
                 <div className="basis-1/2 pl-10 pr-10">
                     <h1 className="font-orbitron text-4xl">Emisiones de Gases de Efecto Invernadero</h1>
                     <hr/>
-                    <p>{data.message}</p>
+                    <p>{employee.message}</p>
                 </div>
             </div>
         </main>
