@@ -1,7 +1,5 @@
 import './globals.css'
-import { useState, useEffect } from 'react'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { Open_Sans, Roboto_Mono, Orbitron } from 'next/font/google'
 
 export const metadata: Metadata = {
