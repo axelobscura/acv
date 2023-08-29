@@ -3,7 +3,7 @@ import Menu from "../components/menu"
 export default function Resultados() {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-10">
-        <div className="flex flex-row w-full justify-space-evenly">
+        <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
           <div className="basis-1/4">
             <Menu />
           </div>

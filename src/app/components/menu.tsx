@@ -35,7 +35,6 @@ export default function Menu() {
                     />
                 </Link>
             </div>
-            <p className='p-3 text-sm p-0 pb-3 pt-0'><small>Instituto Mexicano del Cemento y del Concreto A.C.</small></p>
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={ele.link} key={ele.nombre}>
                     <button 
