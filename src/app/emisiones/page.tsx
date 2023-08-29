@@ -65,7 +65,7 @@ export default function Emisiones() {
                         {etapa === 'Etapa A2' &&
                             <div className='etapaA2'>
                                 <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> La ubicación del proveedor de materia prima::</p>
-                                <input type="number" placeholder='La ubicación del proveedor de materia prima:' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                                <input type="number" placeholder='La ubicación del proveedor de materia prima' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                                 <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que el proveedor recorre de ida:</p>
                                 <input type="text" placeholder='Los km que el proveedor recorre de ida' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                                 <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que el proveedor recorre de regreso:</p>
@@ -77,6 +77,7 @@ export default function Emisiones() {
                                 <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> La frecuencia con la que se surtió la materia prima en el año de declaración:</p>
                                 <input type="text" placeholder='La frecuencia con la que se surtió la materia prima en el año de declaración' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                                 <div className='flex w-full justify-end'>
+                                    <button className='mt-5' onClick={() => setEtapa('Etapa A1')}><ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" /></button>
                                     <button className='mt-5' onClick={() => setEtapa('Etapa A3')}><ArrowSmallRightIcon className="h-10 w-10 text-gray-300" /></button>
                                 </div>
                             </div>
