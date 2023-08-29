@@ -23,7 +23,7 @@ export default function Menu() {
     ];
     return (
         <div className='p-3 text-center'>
-            <div className='flex items-center justify-center p-5'>
+            <div className='flex items-center justify-center p-5 pb-2'>
                 <Link href='/'>
                     <Image
                         //className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
