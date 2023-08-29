@@ -23,7 +23,7 @@ export default function Menu() {
     ];
     return (
         <div className='p-3 text-center'>
-            <div className='flex items-center justify-center'>
+            <div className='flex flex-col items-center justify-center p-3'>
                 <Link href='/'>
                     <div>
                         <Image
@@ -37,11 +37,12 @@ export default function Menu() {
                         />
                     </div>
                 </Link>
+                <p className='text-sm pt-3'>Instituto Mexicano del Cemento y del Concreto A.C.</p>
             </div>
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={ele.link} key={ele.nombre}>
                     <button 
-                        className="font-orbitron bg-customVerde hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5"
+                        className="font-orbitron bg-customVerde hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm"
                     >
                         <Tag/>
                         {ele.nombre}
