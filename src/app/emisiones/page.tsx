@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react'
 import Menu from "../components/menu"
-import { ChevronRightIcon, ArrowRightCircleIcon } from '@heroicons/react/24/solid'
+import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon } from '@heroicons/react/24/solid'
 
 export default function Emisiones() {
     const [data, setData] = useState(null)
@@ -35,8 +35,15 @@ export default function Emisiones() {
                     <h1 className="flex font-orbitron text-4xl pb-2"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Emisiones de Gases de Efecto Invernadero</h1>
                     <hr className='mb-3'/>
                     {/*<p>{employee.message}</p>*/}
+
+                    <div className='flex justify-around mb-5'>
+                        <h2 className='text-3xl font-orbitron w-full bg-customVerdeUno text-center p-3 hover:bg-customVerdeDos cursor-pointer'>Etapa A1</h2>
+                        <h2 className='text-3xl font-orbitron w-full bg-customVerdeUno text-center p-3 hover:bg-customVerdeDos cursor-pointer'>Etapa A2</h2>
+                        <h2 className='text-3xl font-orbitron w-full bg-customVerdeUno text-center p-3 hover:bg-customVerdeDos cursor-pointer'>Etapa A3</h2>
+                    </div>
+
                     <div className='etapaA1'>
-                        <h2 className='text-2xl'>Etapa A1</h2>
+                        <h2 className='flex items-center font-orbitron text-2xl bg-customVerdeDos p-3'><ArrowSmallRightIcon className="h-5 w-5 text-gray-300 mr-1" /> Etapa A1</h2>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Año de declaración:</p>
                         <input type="number" placeholder='Año de declaración' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Nombre común del producto:</p>
