@@ -1,8 +1,11 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import Tag from './tag';
+import { usePathname } from 'next/navigation';
 
 export default function Menu() {
+    const pathname = usePathname();
     const categorias = [
         {
           nombre: 'Emisiones de Gases de Efecto Invernadero',
@@ -21,6 +24,9 @@ export default function Menu() {
           link: 'resultados'
         }
     ];
+
+    console.log(pathname);
+
     return (
         <div className='p-3 text-center'>
             <div className='flex flex-col items-center justify-center p-3'>
@@ -43,7 +49,7 @@ export default function Menu() {
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={ele.link} key={ele.nombre}>
                     <button 
-                        className="font-orbitron bg-customVerde hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm"
+                        className={`font-orbitron ${pathname.slice(1) == ele.link ? 'bg-green-800' : 'bg-customVerde'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
                     >
                         <Tag/>
                         {ele.nombre}
