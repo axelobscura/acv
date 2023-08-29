@@ -13,6 +13,7 @@ const config: Config = {
         customVerdeUno: '#608516',
         customVerdeDos: '#44570f',
         customVerdeTres: '#8e9e44',
+        customVerdeCuatro: '#d9e8ab',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
