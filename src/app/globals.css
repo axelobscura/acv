@@ -23,9 +23,14 @@ body {
 
 .tag {
   position: absolute;
-  top: 10px;
-  right: 10px;
   width: 30px;
   height: 30px;
-  background: #000;
+  background: #8e9e44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40%;
+  margin-left: -30px;
+  margin-top: -15px;
+  box-shadow: 0 0 5px #333;
 }
