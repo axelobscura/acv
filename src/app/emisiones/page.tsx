@@ -31,16 +31,22 @@ export default function Emisiones() {
     }
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-10">
+        <main className="flex min-h-screen flex-col items-center justify-center p-10" style={{
+            'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.80), rgba(29, 40, 6, 0.90)), url("/bkg1.jpg")',
+            'backgroundSize': 'cover', /* makes the bg image responsive */
+            'backgroundRepeat': 'no-repeat',
+            'backgroundPosition': 'center',
+            'backgroundColor': '#222222',
+          }}>
             <div className="flex flex-col sm:flex-row w-full items-center justify-space-evenly">
                 <div className="basis-1/4">
                     <Menu />
                 </div>
-                <div className="pl-10 pr-10 bg-customVerdeTres p-10 rounded-2xl w-full">
+                <div className="pl-10 pr-10 p-10 rounded-2xl w-full">
                     <h1 className="flex font-orbitron text-4xl pb-2"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Emisiones de Gases de Efecto Invernadero</h1>
                     <hr className='mb-3'/>
                     {/*<p>{employee.message}</p>*/}
-                    <div className='flex justify-around mb-5'>
+                    <div className='flex justify-around mb-0'>
                         <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Etapa A1' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Etapa A1')}>Etapa A1</h2>
                         <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Etapa A2' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setEtapa('Etapa A2')}>Etapa A2</h2>
                         <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Etapa A3' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Etapa A3')}>Etapa A3</h2>

@@ -7,16 +7,22 @@ export default function Residuos() {
     const [etapa, setEtapa] = useState('Residuos peligrosos');
 
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center p-10">
+      <main className="flex min-h-screen flex-col items-center justify-center p-10" style={{
+        'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.80), rgba(29, 40, 6, 0.90)), url("/bkg1.jpg")',
+        'backgroundSize': 'cover', /* makes the bg image responsive */
+        'backgroundRepeat': 'no-repeat',
+        'backgroundPosition': 'center',
+        'backgroundColor': '#222222',
+      }}>
             <div className="flex flex-col sm:flex-row w-full items-center justify-space-evenly">
                 <div className="basis-1/4">
                     <Menu />
                 </div>
-                <div className="pl-10 pr-10 bg-customVerdeTres p-10 rounded-2xl w-full">
+                <div className="pl-10 pr-10 p-10 rounded-2xl w-full">
                     <h1 className="flex font-orbitron text-4xl pb-2"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Generación de Residuos</h1>
                     <hr className='mb-3'/>
                     {/*<p>{employee.message}</p>*/}
-                    <div className='flex justify-around mb-5'>
+                    <div className='flex justify-around mb-0'>
                         <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
                         <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
                         <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
