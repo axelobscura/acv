@@ -37,7 +37,8 @@ export default function Menu() {
                         />
                     </div>
                 </Link>
-                <p className='text-sm pt-3'>Instituto Mexicano del Cemento y del Concreto A.C.</p>
+                <p className='font-orbitron text-sm pt-3'>Instituto Mexicano del Cemento y del Concreto A.C.</p>
+                <h2 className='font-orbitron text-3xl pt-4'>ANÁLISIS DE CICLO DE VIDA</h2>
             </div>
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={ele.link} key={ele.nombre}>
