@@ -1,4 +1,5 @@
 import Menu from "../components/menu"
+import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
 
 export default function Resultados() {
     return (
@@ -9,12 +10,13 @@ export default function Resultados() {
         'backgroundPosition': 'center',
         'backgroundColor': '#222222',
       }}>
-        <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
+        <div className="flex flex-col sm:flex-row w-full items-center justify-space-evenly">
           <div className="basis-1/4">
             <Menu />
           </div>
-          <div className="basis-1/2 pl-10 pr-10">
-            <h1 className="font-orbitron text-4xl">Resultados</h1>
+          <div className="pl-10 pr-10 w-full">
+            <h1 className="font-orbitron text-4xl flex"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Resultados</h1>
+            <hr className='mb-3 mt-2'/>
           </div>
         </div>
       </main>
