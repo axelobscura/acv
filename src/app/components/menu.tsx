@@ -25,8 +25,6 @@ export default function Menu() {
         }
     ];
 
-    console.log(pathname);
-
     return (
         <div className='p-3 text-center'>
             <div className='flex flex-col items-center justify-center p-3'>
