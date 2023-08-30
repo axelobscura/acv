@@ -23,9 +23,9 @@ export default function Residuos() {
                     <hr className='mb-3'/>
                     {/*<p>{employee.message}</p>*/}
                     <div className='flex justify-around mb-0'>
-                        <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
-                        <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
-                        <h2 className={`text-3xl font-orbitron w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
+                        <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
+                        <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
+                        <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
                     </div>
                     <h2 className='flex items-center font-orbitron text-2xl bg-customVerdeDos p-3'><ArrowSmallRightIcon className="h-5 w-5 text-gray-300 mr-1" /> {etapa}</h2>
                     <form>
