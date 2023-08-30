@@ -49,7 +49,7 @@ export default function Menu() {
                     <button 
                         className={`font-orbitron ${pathname.slice(1) == ele.link ? 'bg-green-800' : 'bg-customVerde'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
                     >
-                        <Tag/>
+                        <Tag ide={ele.link}/>
                         {ele.nombre}
                     </button>
                 </Link>
