@@ -1,7 +1,18 @@
+"use client"
+import { useSearchParams } from 'next/navigation'
 import Menu from "../components/menu"
-import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
+import Emisiones from '../components/emisiones'
+import Residuos from '../components/residuos'
+import Aguas from '../components/aguas'
+import Resultados from '../components/resultados'
 
-export default function Resultados() {
+export default function Calculadora() {
+    const searchParams = useSearchParams();
+    const categoria = searchParams.get('categoria');
+
+    
+
+
     return (
       <main className="flex min-h-screen flex-col p-5" style={{
         'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.80), rgba(29, 40, 6, 0.90)), url("/bkg1.jpg")',
@@ -15,8 +26,10 @@ export default function Resultados() {
             <Menu />
           </div>
           <div className="pl-10 pr-10 pt-5 w-full">
-            <h1 className="font-orbitron text-4xl flex"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Resultados</h1>
-            <hr className='mb-3 mt-2'/>
+            {categoria == "emisiones" && <Emisiones/>}
+            {categoria == "residuos" && <Residuos/>}
+            {categoria == "aguas" && <Aguas/>}
+            {categoria == "resultados" && <Resultados/>}
           </div>
         </div>
       </main>
