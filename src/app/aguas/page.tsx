@@ -3,7 +3,7 @@ import Menu from "../components/menu"
 
 export default function Aguas() {
     return (
-      <main className="flex min-h-screen flex-col p-5" style={{
+      <main className="flex align-center justify-center min-h-screen flex-col p-5" style={{
         'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.80), rgba(29, 40, 6, 0.90)), url("/bkg1.jpg")',
         'backgroundSize': 'cover', /* makes the bg image responsive */
         'backgroundRepeat': 'no-repeat',

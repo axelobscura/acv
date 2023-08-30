@@ -41,8 +41,7 @@ export default function Menu() {
                         />
                     </div>
                 </Link>
-                <p className='font-orbitron text-sm pt-3'>Instituto Mexicano del Cemento y del Concreto A.C.</p>
-                <h2 className='font-orbitron text-3xl pt-4'>ANÁLISIS DE CICLO DE VIDA</h2>
+                <h2 className='font-orbitron text-xl pt-5 pb-0 mb-0'>ANÁLISIS DE CICLO DE VIDA</h2>
             </div>
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={ele.link} key={ele.nombre}>
@@ -54,6 +53,7 @@ export default function Menu() {
                     </button>
                 </Link>
             ))}
+            <p className='font-orbitron text-sm pt-3 mt-3'>Instituto Mexicano del Cemento y del Concreto A.C.</p>
         </div>
 
     )

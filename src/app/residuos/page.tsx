@@ -7,7 +7,7 @@ export default function Residuos() {
     const [etapa, setEtapa] = useState('Residuos peligrosos');
 
     return (
-      <main className="flex min-h-screen flex-col p-5" style={{
+      <main className="flex min-h-screen align-center justify-center flex-col p-5" style={{
         'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.80), rgba(29, 40, 6, 0.90)), url("/bkg1.jpg")',
         'backgroundSize': 'cover', /* makes the bg image responsive */
         'backgroundRepeat': 'no-repeat',
