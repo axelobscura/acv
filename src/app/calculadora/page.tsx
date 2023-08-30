@@ -14,12 +14,14 @@ export default function Calculadora() {
 
 
     return (
-      <main className="flex min-h-screen flex-col p-5" style={{
+      <main className="flex min-h-screen align-center flex-col p-5" style={{
         'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.80), rgba(29, 40, 6, 0.90)), url("/bkg1.jpg")',
         'backgroundSize': 'cover', /* makes the bg image responsive */
         'backgroundRepeat': 'no-repeat',
         'backgroundPosition': 'center',
         'backgroundColor': '#222222',
+        'alignItems': 'center',
+        'justifyContent': 'center',
       }}>
         <div className="flex flex-col sm:flex-row w-full h-full align-center justify-center">
           <div className="basis-1/4">

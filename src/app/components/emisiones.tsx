@@ -23,6 +23,7 @@ export default function Emisiones() {
     const A3_2 = useRef<HTMLInputElement>(null);
     const A3_3 = useRef<HTMLInputElement>(null);
 
+    /*
     useEffect(() => {
         fetch('/api/hello')
             .then((res) => res.json())
@@ -34,7 +35,7 @@ export default function Emisiones() {
 
     if (isLoading) return <Loader/>
     if (!data) return <p>NO HAY DATOS</p>
-
+    */
     /*
     type Employee = {
         message: string
