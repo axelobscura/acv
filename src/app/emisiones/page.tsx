@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, useRef } from 'react'
 import Menu from "../components/menu"
+import Loader from '../components/loader'
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
 export default function Emisiones() {
@@ -25,7 +26,7 @@ export default function Emisiones() {
             })
     }, [])
 
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return <Loader/>
     if (!data) return <p>No profile data</p>
 
     type Employee = {
