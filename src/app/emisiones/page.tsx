@@ -14,10 +14,6 @@ export default function Emisiones() {
     const A1_4 = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        console.log('LA ETAPA: '+etapa);
-    }, [etapa])
-
-    useEffect(() => {
         fetch('/api/hello')
             .then((res) => res.json())
             .then((data) => {
@@ -35,12 +31,26 @@ export default function Emisiones() {
 
     let employee: Employee | any = data;
 
-    const sacaValor = (etapa: string) => {
+    const sacaValor = async (etapa: string) => {
         setEtapa(etapa);
-        console.log(A1_1.current?.value);
-        console.log(A1_2.current?.value);
-        console.log(A1_3.current?.value);
-        console.log(A1_4.current?.value);
+
+        const res = await fetch('/api/hello', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify([{
+                etapa: {
+                    A1_1: A1_1.current?.value,
+                    A1_2: A1_2.current?.value,
+                    A1_3: A1_3.current?.value,
+                    A1_4: A1_4.current?.value,
+                }
+            }]),
+        })
+
+        const data = await res.json();
+        console.log('LA DATA: ',data);
     }
 
     return (
