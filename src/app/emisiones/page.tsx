@@ -77,8 +77,8 @@ export default function Emisiones() {
                             <input type="number" ref={A1_3} name='A1_3' placeholder='Producción total del producto para el año declarado' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                             <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Materias primas:</p>
                             <input type="text" ref={A1_4} name='A1_4' placeholder='Materias primas' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                            <div className='flex w-full justify-end'>
-                                <ArrowSmallRightIcon className="h-10 w-10 text-gray-300 mt-2" onClick={() => sacaValor('Etapa A2')} />
+                            <div className='flex w-full justify-end mt-2'>
+                                <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
                             </div>
                         </div>
                         <div className='etapaA2' style={{
@@ -97,12 +97,12 @@ export default function Emisiones() {
                             <input type="text" placeholder='El rendimiento de la unidad de transporte vacía' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                             <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> La frecuencia con la que se surtió la materia prima en el año de declaración:</p>
                             <input type="text" placeholder='La frecuencia con la que se surtió la materia prima en el año de declaración' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                            <div className='flex w-full justify-end'>
-                                <button className='mt-5' onClick={() => setEtapa('Etapa A1')}><ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" /></button>
-                                <button className='mt-5' onClick={() => setEtapa('Etapa A3')}><ArrowSmallRightIcon className="h-10 w-10 text-gray-300" /></button>
+                            <div className='flex w-full justify-end mt-2'>
+                                <ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A1')} />
+                                <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A3')} />
                             </div>
                         </div>
-                        <div className='etapaA3' style={{
+                        <div className='etapa A3' style={{
                             display: etapa === 'Etapa A3' ? 'block' : 'none'
                         }}>
                             <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo total de energía eléctrica en kWh:</p>
@@ -111,8 +111,8 @@ export default function Emisiones() {
                             <input type="text" placeholder='Consumo de combustibles fósiles en la planta' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                             <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo de combustibles fósiles en las unidades móviles de la empresa:</p>
                             <input type="number" placeholder='Consumo de combustibles fósiles en las unidades móviles de la empresa' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                            <div className='flex w-full justify-end'>
-                                <button className='mt-5' onClick={() => setEtapa('Etapa A2')}><ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" /></button>
+                            <div className='flex w-full justify-end mt-2'>
+                                <ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
                             </div>
                         </div>
                     </form>
