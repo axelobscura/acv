@@ -10,7 +10,7 @@ export default function Calculadora() {
     const searchParams = useSearchParams();
     const categoria = searchParams.get('categoria');
 
-    
+
 
 
     return (
@@ -21,7 +21,7 @@ export default function Calculadora() {
         'backgroundPosition': 'center',
         'backgroundColor': '#222222',
       }}>
-        <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
+        <div className="flex flex-col sm:flex-row w-full h-full align-center justify-center">
           <div className="basis-1/4">
             <Menu />
           </div>
