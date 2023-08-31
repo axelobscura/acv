@@ -3,13 +3,10 @@ import { useState, useEffect, useRef } from 'react'
 import Loader from '../components/loader'
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
-export default function Emisiones({ setLaEtapa, etapa } : {setLaEtapa: any, etapa: any}) {
+export default function Emisiones({ setLaEtapa, etapa, agregarDatos } : {setLaEtapa: any, etapa: any, agregarDatos:any}) {
     if(!etapa){
         etapa = 'Etapa A1'
     }
-    const [data, setData] = useState(null)
-    const [isLoading, setLoading] = useState(true)
-    const [prueba, setPrueba] = useState('')
 
     const A1_1 = useRef<HTMLInputElement>(null);
     const A1_2 = useRef<HTMLInputElement>(null);
@@ -62,38 +59,7 @@ export default function Emisiones({ setLaEtapa, etapa } : {setLaEtapa: any, etap
 
     const sacaValor = async (etapa: string) => {
         setLaEtapa(etapa);
-
-        let A1_1_v: any = A1_1.current?.value;
-        let A1_2_v: any = A1_2.current?.value;
-        let A1_3_v: any = A1_3.current?.value;
-        let A1_4_v: any = A1_4.current?.value;
-        let A2_1_v: any = A2_1.current?.value;
-        let A2_2_v: any = A2_2.current?.value;
-        let A2_3_v: any = A2_3.current?.value;
-        let A2_4_v: any = A2_4.current?.value;
-        let A2_5_v: any = A2_5.current?.value;
-        let A2_6_v: any = A2_6.current?.value;
-        let A3_1_v: any = A3_1.current?.value;
-        let A3_2_v: any = A3_2.current?.value;
-        let A3_3_v: any = A3_3.current?.value;
-
-        setPrueba(A1_1_v)
-
-        localStorage.setItem("A1_1", A1_1_v)
-        localStorage.setItem("A1_2", A1_2_v)
-        localStorage.setItem("A1_3", A1_3_v)
-        localStorage.setItem("A1_4", A1_4_v)
-        localStorage.setItem("A2_1", A2_1_v)
-        localStorage.setItem("A2_2", A2_2_v)
-        localStorage.setItem("A2_3", A2_3_v)
-        localStorage.setItem("A2_4", A2_4_v)
-        localStorage.setItem("A2_5", A2_5_v)
-        localStorage.setItem("A2_6", A2_6_v)
-        localStorage.setItem("A3_1", A3_1_v)
-        localStorage.setItem("A3_2", A3_2_v)
-        localStorage.setItem("A3_3", A3_3_v)
-
-        
+        /*
         const res = await fetch('/api/hello', {
             method: 'POST',
             headers: {
@@ -112,7 +78,14 @@ export default function Emisiones({ setLaEtapa, etapa } : {setLaEtapa: any, etap
 
         const data = await res.json();
         console.log('LA DATA: ',data);
-        
+        */
+    }
+
+    const sacarDato = (e: any) => {
+        let valor = e.target.value;
+        let nombre = e.target.name;
+        console.log(valor, nombre);
+        agregarDatos({nombre, valor})
     }
 
     return (
@@ -132,13 +105,13 @@ export default function Emisiones({ setLaEtapa, etapa } : {setLaEtapa: any, etap
                         display: etapa === 'Etapa A1' ? 'block' : 'none'
                     }}>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Año de declaración:</p>
-                        <input type="number" ref={A1_1} name='A1_1' placeholder={value_A1_1 ? value_A1_1 : 'Año de declaración'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="number" onMouseOut={sacarDato} name='A1_1' placeholder={value_A1_1 ? value_A1_1 : 'Año de declaración'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Nombre común del producto:</p>
-                        <input type="text" ref={A1_2} name='A1_2' placeholder={value_A1_2 ? value_A1_2 : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="text" onMouseOut={sacarDato} name='A1_2' placeholder={value_A1_2 ? value_A1_2 : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
-                        <input type="number" ref={A1_3} name='A1_3' placeholder={value_A1_3 ? value_A1_3 : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="number" onMouseOut={sacarDato} name='A1_3' placeholder={value_A1_3 ? value_A1_3 : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Materias primas:</p>
-                        <input type="text" ref={A1_4} name='A1_4' placeholder={value_A1_4 ? value_A1_4 : 'Materias primas'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="text" onMouseOut={sacarDato} name='A1_4' placeholder={value_A1_4 ? value_A1_4 : 'Materias primas'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <div className='flex w-full justify-end mt-2'>
                             <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
                         </div>

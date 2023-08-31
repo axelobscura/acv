@@ -12,11 +12,17 @@ export default function Calculadora() {
     const categoria = searchParams.get('categoria')
 
     const [etapa, setEtapa] = useState('')
-
+    const [losdatos, setLosdatos] : [losdatos: any, setLosdatos: any] = useState([])
 
     const setLaEtapa = (etapa: string) => {
         setEtapa(etapa)
     }
+
+    const agregarDatos = (dato: any | undefined) => {
+        setLosdatos([...losdatos, dato])
+    }
+
+    console.log('LOS DATOS:', losdatos)
 
     return (
       <main className="flex min-h-screen align-center flex-col p-5" style={{
@@ -33,7 +39,7 @@ export default function Calculadora() {
             <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)} />
           </div>
           <div className="sm:pl-0 sm:pr-0 md:pl-10 md:pr-10  pt-5 w-full">
-            {categoria == "emisiones" && <Emisiones setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa}/>}
+            {categoria == "emisiones" && <Emisiones setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)}/>}
             {categoria == "residuos" && <Residuos setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa}/>}
             {categoria == "aguas" && <Aguas/>}
             {categoria == "resultados" && <Resultados/>}
