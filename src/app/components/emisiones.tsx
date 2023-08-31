@@ -10,8 +10,8 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
 
     const [prendido, setPrendido] = useState('')
 
-    console.log('LOS DATOS:', losdatos)
-    console.log('ETAPA: ', etapa)
+    //console.log('LOS DATOS:', losdatos)
+    //console.log('ETAPA: ', etapa)
 
     useEffect(() => {
         setPrendido(losdatos.filter((dato: any) => dato.nombre === etapa))
@@ -82,7 +82,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
         agregarDatos({nombre, valor})
     }
 
-    console.log('FILTRADOS: ', prendido);
+    //console.log('FILTRADOS: ', prendido);
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
@@ -101,13 +101,27 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         display: etapa === 'Etapa A1' ? 'block' : 'none'
                     }}>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Año de declaración:</p>
-                        <input type="number" onMouseOut={sacarDato} name='A1_1' placeholder={'Año de declaración'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <select onChange={sacarDato} name='A1_1' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
+                            <option value='2017'>2017</option>
+                            <option value='2018'>2018</option>
+                            <option value='2019'>2019</option>
+                            <option value='2020'>2020</option>
+                            <option value='2021'>2021</option>
+                            <option value='2022'>2022</option>
+                            <option value='2023'>2023</option>
+                        </select>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Nombre común del producto:</p>
-                        <input type="text" onMouseOut={sacarDato} name='A1_2' placeholder={'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="text" onBlur={sacarDato} name='A1_2' placeholder={'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
-                        <input type="number" onMouseOut={sacarDato} name='A1_3' placeholder={'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="number" onBlur={sacarDato} name='A1_3' placeholder={'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Materias primas:</p>
-                        <input type="text" onMouseOut={sacarDato} name='A1_4' placeholder={'Materias primas'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <select onChange={sacarDato} name='A1_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
+                            <option value='Polipropileno'>Polipropileno</option>
+                            <option value='Grava'>Grava</option>
+                            <option value='Cemento'>Cemento</option>
+                            <option value='Arena'>Arena</option>
+                            <option value='Agua'>Agua</option>
+                        </select>
                         <div className='flex w-full justify-end mt-2'>
                             <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
                         </div>
@@ -118,9 +132,9 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                     }}>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> La ubicación del proveedor de materia prima::</p>
                         <input type="text" onMouseOut={sacarDato} name='A2_1' placeholder={'La ubicación del proveedor de materia prima'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que el proveedor recorre de ida:</p>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que se recorren de la planta del proveedor a la planta de producción (ida):</p>
                         <input type="number" onMouseOut={sacarDato} name='A2_2' placeholder={'Los km que el proveedor recorre de ida'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que el proveedor recorre de regreso:</p>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km km que se recorren de la planta del producción a la planta de proveedor (vuelta):</p>
                         <input type="number" onMouseOut={sacarDato} name='A2_3' placeholder={'Los km que el proveedor recorre de regreso'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> El rendimiento de la unidad de transporte llena:</p>
                         <input type="text" onMouseOut={sacarDato} name='A2_4' placeholder={'El rendimiento de la unidad de transporte llena'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>

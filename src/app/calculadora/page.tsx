@@ -1,4 +1,5 @@
 "use client"
+import { useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Menu from "../components/menu"
 import Emisiones from '../components/emisiones'
@@ -13,20 +14,27 @@ export default function Calculadora() {
 
     const [etapa, setEtapa] = useState('Etapa A1')
     const [losdatos, setLosdatos] : [losdatos: any, setLosdatos: any] = useState([])
+    const [datos, setDatos] = useState([])
 
     const setLaEtapa = (etapa: string) => {
         setEtapa(etapa)
     }
 
     const agregarDatos = (dato: any | undefined) => {
-        setLosdatos([...losdatos, dato])
+      setLosdatos([...losdatos, dato])
     }
 
-    console.log('LOS DATOS:', losdatos)
+    useEffect(() => {
+      const key = 'nombre';
+      const arrayUniqueByKey : any = [...new Map(losdatos.map((item: any) => [item[key], item])).values()];
+      setDatos(arrayUniqueByKey);
+    }, [losdatos])
+
+    console.log(datos)
 
     return (
       <main className="flex min-h-screen align-center flex-col p-5" style={{
-        'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.80), rgba(29, 40, 6, 0.90)), url("/bkg1.jpg")',
+        'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.90), rgba(29, 40, 6, 0.95)), url("/bkg1.jpg")',
         'backgroundSize': 'cover', /* makes the bg image responsive */
         'backgroundRepeat': 'no-repeat',
         'backgroundPosition': 'center',
