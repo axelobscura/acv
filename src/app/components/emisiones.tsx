@@ -1,26 +1,21 @@
 "use client"
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import Loader from '../components/loader'
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
-export default function Emisiones({ setLaEtapa, etapa, agregarDatos } : {setLaEtapa: any, etapa: any, agregarDatos:any}) {
+export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } : {setLaEtapa: any, etapa: any, agregarDatos:any, losdatos:any}) {
     if(!etapa){
         etapa = 'Etapa A1'
     }
 
-    const A1_1 = useRef<HTMLInputElement>(null);
-    const A1_2 = useRef<HTMLInputElement>(null);
-    const A1_3 = useRef<HTMLInputElement>(null);
-    const A1_4 = useRef<HTMLInputElement>(null);
-    const A2_1 = useRef<HTMLInputElement>(null);
-    const A2_2 = useRef<HTMLInputElement>(null);
-    const A2_3 = useRef<HTMLInputElement>(null);
-    const A2_4 = useRef<HTMLInputElement>(null);
-    const A2_5 = useRef<HTMLInputElement>(null);
-    const A2_6 = useRef<HTMLInputElement>(null);
-    const A3_1 = useRef<HTMLInputElement>(null);
-    const A3_2 = useRef<HTMLInputElement>(null);
-    const A3_3 = useRef<HTMLInputElement>(null);
+    const [prendido, setPrendido] = useState('')
+
+    console.log('LOS DATOS:', losdatos)
+    console.log('ETAPA: ', etapa)
+
+    useEffect(() => {
+        setPrendido(losdatos.filter((dato: any) => dato.nombre === etapa))
+    }, [])
 
     /*
     useEffect(() => {
@@ -42,7 +37,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos } : {setLaEt
 
     let employee: Employee | any = data;
     */
-    
+    /*
     let value_A1_1 = localStorage.getItem('A1_1');
     let value_A1_2 = localStorage.getItem('A1_2');
     let value_A1_3 = localStorage.getItem('A1_3');
@@ -56,7 +51,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos } : {setLaEt
     let value_A3_1 = localStorage.getItem('A3_1');
     let value_A3_2 = localStorage.getItem('A3_2');
     let value_A3_3 = localStorage.getItem('A3_3');
-
+    */
     const sacaValor = async (etapa: string) => {
         setLaEtapa(etapa);
         /*
@@ -84,9 +79,10 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos } : {setLaEt
     const sacarDato = (e: any) => {
         let valor = e.target.value;
         let nombre = e.target.name;
-        console.log(valor, nombre);
         agregarDatos({nombre, valor})
     }
+
+    console.log('FILTRADOS: ', prendido);
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
