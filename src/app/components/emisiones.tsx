@@ -24,7 +24,6 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
         agregarDatos({nombre, valor})
     }
 
-    console.log(losdatos.map((dat: any) => dat.nombre === 'A1_1'))
     const object_A1_1 = losdatos.find((obj: any) => obj.nombre === 'A1_1');
 
     return (
