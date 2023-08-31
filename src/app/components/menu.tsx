@@ -4,24 +4,28 @@ import Link from 'next/link';
 import Tag from './tag';
 import { usePathname } from 'next/navigation';
 
-export default function Menu() {
+export default function Menu({setLaEtapa} : {setLaEtapa: any}) {
     const pathname = usePathname();
     const categorias = [
         {
           nombre: 'Emisiones de Gases de Efecto Invernadero',
-          link: 'emisiones'
+          link: 'emisiones',
+          etapa: 'Etapa A1'
         },
         {
           nombre: 'Generación de Residuos',
-          link: 'residuos'
+          link: 'residuos',
+          etapa: 'Residuos peligrosos'
         },
         {
           nombre: 'Consumo de Agua',
-          link: 'aguas'
+          link: 'aguas',
+          etapa: 'agua'
         },
         {
           nombre: 'Resultados',
-          link: 'resultados'
+          link: 'resultados',
+          etapa: 'resultados'
         }
     ];
 
@@ -48,6 +52,7 @@ export default function Menu() {
                 <Link className='w-full' href={`/calculadora?categoria=${ele.link}`} key={ele.nombre}>
                     <button 
                         className={`font-orbitron ${pathname.slice(1) == ele.link ? 'bg-green-800' : 'bg-customVerde'} ${pathname.slice(1) ? 'text-xs' : 'text-lg'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
+                        onClick={() => setLaEtapa(ele.etapa)}
                     >
                         <Tag ide={ele.link}/>
                         {ele.nombre} {pathname.slice(1)}

@@ -5,13 +5,18 @@ import Emisiones from '../components/emisiones'
 import Residuos from '../components/residuos'
 import Aguas from '../components/aguas'
 import Resultados from '../components/resultados'
+import { useState } from 'react'
 
 export default function Calculadora() {
-    const searchParams = useSearchParams();
-    const categoria = searchParams.get('categoria');
+    const searchParams = useSearchParams()
+    const categoria = searchParams.get('categoria')
+
+    const [etapa, setEtapa] = useState('')
 
 
-
+    const setLaEtapa = (etapa: string) => {
+        setEtapa(etapa)
+    }
 
     return (
       <main className="flex min-h-screen align-center flex-col p-5" style={{
@@ -25,11 +30,11 @@ export default function Calculadora() {
       }}>
         <div className="flex flex-col sm:flex-row w-full h-full align-center justify-center">
           <div className="basis-1/4">
-            <Menu />
+            <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)} />
           </div>
-          <div className="pl-10 pr-10 pt-5 w-full">
-            {categoria == "emisiones" && <Emisiones/>}
-            {categoria == "residuos" && <Residuos/>}
+          <div className="sm:pl-0 sm:pr-0 md:pl-10 md:pr-10  pt-5 w-full">
+            {categoria == "emisiones" && <Emisiones setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa}/>}
+            {categoria == "residuos" && <Residuos setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa}/>}
             {categoria == "aguas" && <Aguas/>}
             {categoria == "resultados" && <Resultados/>}
           </div>

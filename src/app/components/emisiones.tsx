@@ -3,10 +3,12 @@ import { useState, useEffect, useRef } from 'react'
 import Loader from '../components/loader'
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
-export default function Emisiones() {
+export default function Emisiones({ setLaEtapa, etapa } : {setLaEtapa: any, etapa: any}) {
+    if(!etapa){
+        etapa = 'Etapa A1'
+    }
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)
-    const [etapa, setEtapa] = useState('Etapa A1')
     const [prueba, setPrueba] = useState('')
 
     const A1_1 = useRef<HTMLInputElement>(null);
@@ -59,7 +61,7 @@ export default function Emisiones() {
     let value_A3_3 = localStorage.getItem('A3_3');
 
     const sacaValor = async (etapa: string) => {
-        setEtapa(etapa);
+        setLaEtapa(etapa);
 
         let A1_1_v: any = A1_1.current?.value;
         let A1_2_v: any = A1_2.current?.value;
