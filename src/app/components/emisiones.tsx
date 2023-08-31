@@ -44,7 +44,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                     }}>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Año de declaración:</p>
                         <select onChange={sacarDato} name='A1_1' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
-                            <option value=''>{object_A1_1.valor}</option>
+                            <option value={object_A1_1 ? object_A1_1.valor : ''}>{object_A1_1 ? object_A1_1.valor : ''}</option>
                             <option value='2017'>2017</option>
                             <option value='2018'>2018</option>
                             <option value='2019'>2019</option>
