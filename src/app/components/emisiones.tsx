@@ -10,70 +10,12 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
 
     const [prendido, setPrendido] = useState('')
 
-    //console.log('LOS DATOS:', losdatos)
-    //console.log('ETAPA: ', etapa)
-
     useEffect(() => {
         setPrendido(losdatos.filter((dato: any) => dato.nombre === etapa))
     }, [])
 
-    /*
-    useEffect(() => {
-        fetch('/api/hello')
-            .then((res) => res.json())
-            .then((data) => {
-                setData(data)
-                setLoading(false)
-            })
-    }, [])
-
-    if (isLoading) return <Loader/>
-    if (!data) return <p>NO HAY DATOS</p>
-    */
-    /*
-    type Employee = {
-        message: string
-    };
-
-    let employee: Employee | any = data;
-    */
-    /*
-    let value_A1_1 = localStorage.getItem('A1_1');
-    let value_A1_2 = localStorage.getItem('A1_2');
-    let value_A1_3 = localStorage.getItem('A1_3');
-    let value_A1_4 = localStorage.getItem('A1_4');
-    let value_A2_1 = localStorage.getItem('A2_1');
-    let value_A2_2 = localStorage.getItem('A2_2');
-    let value_A2_3 = localStorage.getItem('A2_3');
-    let value_A2_4 = localStorage.getItem('A2_4');
-    let value_A2_5 = localStorage.getItem('A2_5');
-    let value_A2_6 = localStorage.getItem('A2_6');
-    let value_A3_1 = localStorage.getItem('A3_1');
-    let value_A3_2 = localStorage.getItem('A3_2');
-    let value_A3_3 = localStorage.getItem('A3_3');
-    */
     const sacaValor = async (etapa: string) => {
         setLaEtapa(etapa);
-        /*
-        const res = await fetch('/api/hello', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify([{
-                etapa: {
-                    A1_1: A1_1.current?.value,
-                    A1_2: A1_2.current?.value,
-                    A1_3: A1_3.current?.value,
-                    A1_4: A1_4.current?.value,
-                    A2_1: A2_1.current?.value,
-                }
-            }]),
-        })
-
-        const data = await res.json();
-        console.log('LA DATA: ',data);
-        */
     }
 
     const sacarDato = (e: any) => {
@@ -82,7 +24,8 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
         agregarDatos({nombre, valor})
     }
 
-    //console.log('FILTRADOS: ', prendido);
+    console.log(losdatos.map((dat: any) => dat.nombre === 'A1_1'))
+    const object_A1_1 = losdatos.find((obj: any) => obj.nombre === 'A1_1');
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
@@ -102,6 +45,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                     }}>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Año de declaración:</p>
                         <select onChange={sacarDato} name='A1_1' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
+                            <option value=''>{object_A1_1.valor}</option>
                             <option value='2017'>2017</option>
                             <option value='2018'>2018</option>
                             <option value='2019'>2019</option>
@@ -116,6 +60,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <input type="number" onBlur={sacarDato} name='A1_3' placeholder={'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Materias primas:</p>
                         <select onChange={sacarDato} name='A1_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
+                            <option value=''></option>
                             <option value='Polipropileno'>Polipropileno</option>
                             <option value='Grava'>Grava</option>
                             <option value='Cemento'>Cemento</option>

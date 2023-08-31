@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
-export default function Residuos({ setLaEtapa, etapa } : {setLaEtapa: any, etapa: any}) {
+export default function Residuos({ setLaEtapa, etapa, agregarDatos } : {setLaEtapa: any, etapa: any, agregarDatos: any}) {
     if(!etapa){
         etapa = 'Residuos peligrosos'
     }

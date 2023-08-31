@@ -30,8 +30,6 @@ export default function Calculadora() {
       setDatos(arrayUniqueByKey);
     }, [losdatos])
 
-    console.log(datos)
-
     return (
       <main className="flex min-h-screen align-center flex-col p-5" style={{
         'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.90), rgba(29, 40, 6, 0.95)), url("/bkg1.jpg")',
@@ -47,8 +45,8 @@ export default function Calculadora() {
             <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)} />
           </div>
           <div className="sm:pl-0 sm:pr-0 md:pl-10 md:pr-10  pt-5 w-full">
-            {categoria == "emisiones" && <Emisiones setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={losdatos}/>}
-            {categoria == "residuos" && <Residuos setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa}/>}
+            {categoria == "emisiones" && <Emisiones setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={datos}/>}
+            {categoria == "residuos" && <Residuos setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)}/>}
             {categoria == "aguas" && <Aguas/>}
             {categoria == "resultados" && <Resultados/>}
           </div>
