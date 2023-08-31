@@ -11,7 +11,7 @@ export default function Calculadora() {
     const searchParams = useSearchParams()
     const categoria = searchParams.get('categoria')
 
-    const [etapa, setEtapa] = useState('')
+    const [etapa, setEtapa] = useState('Etapa A1')
     const [losdatos, setLosdatos] : [losdatos: any, setLosdatos: any] = useState([])
 
     const setLaEtapa = (etapa: string) => {
