@@ -28,6 +28,8 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     const object_A1_2 = losdatos.find((obj: any) => obj.nombre === 'A1_2');
     const object_A1_3 = losdatos.find((obj: any) => obj.nombre === 'A1_3');
     const object_A1_4 = losdatos.find((obj: any) => obj.nombre === 'A1_4');
+    const object_A2_1 = losdatos.find((obj: any) => obj.nombre === 'A2_1');
+    const object_A2_2 = losdatos.find((obj: any) => obj.nombre === 'A2_2');
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
@@ -78,9 +80,9 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         overflow: 'auto'
                     }}>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> La ubicación del proveedor de materia prima::</p>
-                        <input type="text" onMouseOut={sacarDato} name='A2_1' placeholder={'La ubicación del proveedor de materia prima'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="text" onMouseOut={sacarDato} name='A2_1' placeholder={object_A2_1 ? object_A2_1.valor : 'La ubicación del proveedor de materia prima'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que se recorren de la planta del proveedor a la planta de producción (ida):</p>
-                        <input type="number" onMouseOut={sacarDato} name='A2_2' placeholder={'Los km que el proveedor recorre de ida'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="number" onMouseOut={sacarDato} name='A2_2' placeholder={object_A2_2 ? object_A2_2.valor : 'Los km que el proveedor recorre de ida'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km km que se recorren de la planta del producción a la planta de proveedor (vuelta):</p>
                         <input type="number" onMouseOut={sacarDato} name='A2_3' placeholder={'Los km que el proveedor recorre de regreso'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> El rendimiento de la unidad de transporte llena:</p>
