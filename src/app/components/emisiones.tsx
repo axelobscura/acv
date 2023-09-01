@@ -25,6 +25,9 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     }
 
     const object_A1_1 = losdatos.find((obj: any) => obj.nombre === 'A1_1');
+    const object_A1_2 = losdatos.find((obj: any) => obj.nombre === 'A1_2');
+    const object_A1_3 = losdatos.find((obj: any) => obj.nombre === 'A1_3');
+    const object_A1_4 = losdatos.find((obj: any) => obj.nombre === 'A1_4');
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
@@ -54,12 +57,12 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                             <option value='2023'>2023</option>
                         </select>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Nombre común del producto:</p>
-                        <input type="text" onBlur={sacarDato} name='A1_2' placeholder={'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="text" onBlur={sacarDato} name='A1_2' placeholder={object_A1_2 ? object_A1_2.valor : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
-                        <input type="number" onBlur={sacarDato} name='A1_3' placeholder={'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="number" onBlur={sacarDato} name='A1_3' placeholder={object_A1_3 ? object_A1_3.valor : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Materias primas:</p>
                         <select onChange={sacarDato} name='A1_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
-                            <option value=''></option>
+                            <option value={object_A1_4 ? object_A1_4.valor : ''}>{object_A1_4 ? object_A1_4.valor : ''}</option>
                             <option value='Polipropileno'>Polipropileno</option>
                             <option value='Grava'>Grava</option>
                             <option value='Cemento'>Cemento</option>
