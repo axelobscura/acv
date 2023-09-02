@@ -11,7 +11,7 @@ export default function Home() {
     }}>
       <div className="grid grid-cols-1">
         <div>
-          <Menu setLaEtapa={'Etapa A1'}/>
+          <Menu/>
         </div>
       </div>
     </main>
