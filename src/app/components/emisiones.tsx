@@ -62,7 +62,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <input type="text" onBlur={sacarDato} name='A1_2' placeholder={object_A1_2 ? object_A1_2.valor : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
                         <input type="number" onBlur={sacarDato} name='A1_3' placeholder={object_A1_3 ? object_A1_3.valor : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Materias primas:</p>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto:</p>
                         <select onChange={sacarDato} name='A1_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
                             <option value={object_A1_4 ? object_A1_4.valor : ''}>{object_A1_4 ? object_A1_4.valor : ''}</option>
                             <option value='Polipropileno'>Polipropileno</option>

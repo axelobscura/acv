@@ -6,6 +6,7 @@ export default function Resultados() {
             <div className="pt-0 w-full">
                 <h1 className="font-orbitron text-4xl flex"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Resultados</h1>
                 <hr className='mb-3 mt-2' />
+                <p className='font-orbitron text-xs'>En esta sección se arrojaran una tablas resumen con las emisiones de CO<sup>2</sup> por unidad declarada de producto, para cada una de las etapa (A1, A2 y A3), además con el consumo por unidad declarada y un índice de circularidad de reutilización de residuos.</p>
                 <h3 className='font-orbitron text-2xl text-white text-bold pt-3 pb-3'>Generación de Dióxido de Carbono equivalente</h3>
                 <table className="font-orbitron table-fixed border-separate border-spacing-2 border border-white w-full">
                     <thead>
@@ -17,9 +18,23 @@ export default function Resultados() {
                             <th className='bg-customVerdeDos'>KgCO2e/unidad declarada</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='text-center'>
                         <tr>
+                            <td className='bg-customVerdeUno text-center'>A1</td>
                             <td>20000</td>
+                            <td>20000</td>
+                            <td>20000</td>
+                            <td>20000</td>
+                        </tr>
+                        <tr>
+                            <td className='bg-customVerdeUno text-center'>A2</td>
+                            <td>20000</td>
+                            <td>20000</td>
+                            <td>20000</td>
+                            <td>20000</td>
+                        </tr>
+                        <tr>
+                            <td className='bg-customVerdeUno text-center'>A3</td>
                             <td>20000</td>
                             <td>20000</td>
                             <td>20000</td>

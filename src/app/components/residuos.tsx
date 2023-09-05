@@ -32,9 +32,9 @@ export default function Residuos({ setLaEtapa, etapa, agregarDatos } : {setLaEta
                     }
                     {etapa === 'Residuos de manejo especial' &&
                         <div className='etapaA2'>
-                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Generación de RSU (kg):</p>
+                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Generación de RME (kg):</p>
                             <input type="number" placeholder='Generación de RSU (kg)' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Cantidad de RSU que se reutilizaron (kg):</p>
+                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Cantidad de RME que se reutilizaron (kg):</p>
                             <input type="number" placeholder='Cantidad de RSU que se reutilizaron (kg)' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                             <div className='flex w-full justify-end'>
                                 <button className='mt-5' onClick={() => setLaEtapa('Residuos peligrosos')}><ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" /></button>
@@ -44,9 +44,9 @@ export default function Residuos({ setLaEtapa, etapa, agregarDatos } : {setLaEta
                     }
                     {etapa === 'Residuos sólidos urbanos' &&
                         <div className='etapaA3'>
-                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Generación de RME (kg):</p>
+                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Generación de RSU (kg):</p>
                             <input type="number" placeholder='Generación de RME (kg)' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Cantidad de RME que se reutilizaron (kg):</p>
+                            <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Cantidad de RSU que se reutilizaron (kg):</p>
                             <input type="number" placeholder='Cantidad de RME que se reutilizaron (kg)' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                             <div className='flex w-full justify-end'>
                                 <button className='mt-5' onClick={() => setLaEtapa('Residuos de manejo especial')}><ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" /></button>
