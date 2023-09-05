@@ -7,34 +7,27 @@ import { useSearchParams } from 'next/navigation'
 export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } : {setLaEtapa: any, etapa: any, agregarDatos:any, losdatos:any}) {
     const searchParams = useSearchParams()
     const search = searchParams.get('categoria')
-    console.log(etapa)
     if(etapa !== 'Etapa A1' && etapa !== 'Etapa A2' && etapa !== 'Etapa A3'){
         etapa = 'Etapa A1'
     }
-
     const [prendido, setPrendido] = useState('')
-
     useEffect(() => {
         setPrendido(losdatos.filter((dato: any) => dato.nombre === etapa))
     }, [])
-
     const sacaValor = async (etapa: string) => {
         setLaEtapa(etapa);
     }
-
     const sacarDato = (e: any) => {
         let valor = e.target.value;
         let nombre = e.target.name;
         agregarDatos({nombre, valor})
     }
-
     const object_A1_1 = losdatos.find((obj: any) => obj.nombre === 'A1_1');
     const object_A1_2 = losdatos.find((obj: any) => obj.nombre === 'A1_2');
     const object_A1_3 = losdatos.find((obj: any) => obj.nombre === 'A1_3');
     const object_A1_4 = losdatos.find((obj: any) => obj.nombre === 'A1_4');
     const object_A2_1 = losdatos.find((obj: any) => obj.nombre === 'A2_1');
     const object_A2_2 = losdatos.find((obj: any) => obj.nombre === 'A2_2');
-
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
             <div className="p-0 w-full">
