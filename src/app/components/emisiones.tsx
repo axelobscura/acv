@@ -60,6 +60,29 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
                         <input type="number" onBlur={sacarDato} name='A1_3' placeholder={object_A1_3 ? object_A1_3.valor : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto:</p>
+                        <div className="flex space-x-4 p-2">
+                            <label className="inline-flex items-center">
+                                <input type="checkbox" value='Polipropileno' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <span className="font-orbitron ml-2">Polipropileno</span>
+                            </label>
+                            <label className="inline-flex items-center">
+                                <input type="checkbox" value='Grava' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <span className="font-orbitron ml-2">Grava</span>
+                            </label>
+                            <label className="inline-flex items-center">
+                                <input type="checkbox" value='Cemento' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <span className="font-orbitron ml-2">Cemento</span>
+                            </label>
+                            <label className="inline-flex items-center">
+                                <input type="checkbox" value='Arena' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <span className="font-orbitron ml-2">Arena</span>
+                            </label>
+                            <label className="inline-flex items-center">
+                                <input type="checkbox" value='Agua' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <span className="font-orbitron ml-2">Agua</span>
+                            </label>
+                        </div>
+                        {/*
                         <select onChange={sacarDato} name='A1_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
                             <option value={object_A1_4 ? object_A1_4.valor : ''}>{object_A1_4 ? object_A1_4.valor : ''}</option>
                             <option value='Polipropileno'>Polipropileno</option>
@@ -68,6 +91,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                             <option value='Arena'>Arena</option>
                             <option value='Agua'>Agua</option>
                         </select>
+                        */}
                         <div className='flex w-full justify-end mt-2'>
                             <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
                         </div>

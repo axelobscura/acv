@@ -27,8 +27,11 @@ export default function Calculadora() {
     useEffect(() => {
       const key = 'nombre';
       const arrayUniqueByKey : any = [...new Map(losdatos.map((item: any) => [item[key], item])).values()];
-      setDatos(arrayUniqueByKey);
+      setDatos(arrayUniqueByKey)
     }, [losdatos])
+
+
+    console.log('DATOS: ' + losdatos)
 
     return (
       <main className="flex min-h-screen align-center flex-col p-5" style={{
