@@ -40,7 +40,7 @@ export default function Calculadora() {
         'alignItems': 'center',
         'justifyContent': 'center',
       }}>
-        <div className="flex flex-col sm:flex-row w-full h-full align-center justify-center">
+        <div className="flex flex-col sm:flex-row w-full h-full items-center justify-center">
           <div className="basis-1/4">
             <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)}/>
           </div>
