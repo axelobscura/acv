@@ -1,11 +1,12 @@
 'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import Tag from './tag';
-import { usePathname } from 'next/navigation';
+import Image from 'next/image'
+import Link from 'next/link'
+import Tag from './tag'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 export default function Menu({setLaEtapa = 'Etapa A1'} : {setLaEtapa?: any}) {
-    const pathname = usePathname();
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
     const categorias = [
         {
           nombre: 'Emisiones de Gases de Efecto Invernadero',
@@ -29,6 +30,8 @@ export default function Menu({setLaEtapa = 'Etapa A1'} : {setLaEtapa?: any}) {
         }
     ];
 
+    const search = searchParams.get('categoria')
+
     return (
         <div className='p-3 text-center'>
             <div className='flex flex-col items-center justify-center p-3'>
@@ -51,11 +54,10 @@ export default function Menu({setLaEtapa = 'Etapa A1'} : {setLaEtapa?: any}) {
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={`/calculadora?categoria=${ele.link}`} key={ele.nombre}>
                     <button 
-                        className={`font-orbitron ${pathname.slice(1) == ele.link ? 'bg-green-800' : 'bg-customVerde'} ${pathname.slice(1) ? 'text-xs' : 'text-lg'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
-                        //onClick={() => setLaEtapa('Residuos peligrosos')}
+                        className={`font-orbitron ${search == ele.link ? 'bg-green-800' : 'bg-customVerde'} ${search ? 'text-xs' : 'text-lg'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
                     >
                         <Tag ide={ele.link}/>
-                        {ele.nombre} {pathname.slice(1)}
+                        {ele.nombre}
                     </button>
                 </Link>
             ))}

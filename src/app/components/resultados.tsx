@@ -12,8 +12,8 @@ export default function Resultados() {
                     <thead>
                         <tr>
                             <th className='bg-customVerdeDos'>Etapa</th>
-                            <th className='bg-customVerdeDos'>tCO2e por consumo de combustible</th>
-                            <th className='bg-customVerdeDos'>tCO2e por consumo de energía</th>
+                            <th className='bg-customVerdeDos'>tCO<sup>2</sup>e por consumo de combustible</th>
+                            <th className='bg-customVerdeDos'>tCO<sup>2</sup>e por consumo de energía</th>
                             <th className='bg-customVerdeDos'>Total de tCO2e</th>
                             <th className='bg-customVerdeDos'>KgCO2e/unidad declarada</th>
                         </tr>
