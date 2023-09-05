@@ -11,6 +11,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
         etapa = 'Etapa A1'
     }
     const [prendido, setPrendido] = useState('')
+    const [lasPrimas, setLasPrimas] : [lasPrimas: any, setLasPrimas: any] = useState([])
     useEffect(() => {
         setPrendido(losdatos.filter((dato: any) => dato.nombre === etapa))
     }, [])
@@ -22,12 +23,36 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
         let nombre = e.target.name;
         agregarDatos({nombre, valor})
     }
+    
+    let mPrimas: string[] = [];
+    const materiasPrimas = (e: any) => {
+        let valor = e.target.value;
+        const exists = mPrimas.indexOf(valor) !== -1;
+        if (lasPrimas.includes(valor)) {
+            const index = lasPrimas.indexOf(valor);
+            lasPrimas.splice(index, 1);
+            setLasPrimas(lasPrimas)
+        } else {
+            mPrimas.push(valor);
+            setLasPrimas([...lasPrimas, valor])
+        }
+    }
+
+    useEffect(() => {
+        if(lasPrimas.length){
+            agregarDatos({'nombre':'primas', 'valor':[...lasPrimas]})
+        }
+    }, [lasPrimas])
+    
+
     const object_A1_1 = losdatos.find((obj: any) => obj.nombre === 'A1_1');
     const object_A1_2 = losdatos.find((obj: any) => obj.nombre === 'A1_2');
     const object_A1_3 = losdatos.find((obj: any) => obj.nombre === 'A1_3');
     const object_A1_4 = losdatos.find((obj: any) => obj.nombre === 'A1_4');
     const object_A2_1 = losdatos.find((obj: any) => obj.nombre === 'A2_1');
     const object_A2_2 = losdatos.find((obj: any) => obj.nombre === 'A2_2');
+
+
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
             <div className="p-0 w-full">
@@ -62,23 +87,23 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto:</p>
                         <div className="flex space-x-4 p-2">
                             <label className="inline-flex items-center">
-                                <input type="checkbox" value='Polipropileno' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} value='Polipropileno' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Polipropileno</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" value='Grava' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} value='Grava' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Grava</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" value='Cemento' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} value='Cemento' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Cemento</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" value='Arena' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} value='Arena' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Arena</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" value='Agua' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} value='Agua' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Agua</span>
                             </label>
                         </div>

@@ -1,6 +1,9 @@
 import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
 
-export default function Resultados() {
+export default function Resultados({datos}: {datos: any}) {
+
+    console.log('DATOS: ' + JSON.stringify(datos))
+
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
             <div className="pt-0 w-full">
