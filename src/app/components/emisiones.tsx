@@ -79,6 +79,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                             <option value='2021'>2021</option>
                             <option value='2022'>2022</option>
                             <option value='2023'>2023</option>
+                            <option value='2024'>2024</option>
                         </select>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Nombre común del producto:</p>
                         <input type="text" onBlur={sacarDato} name='A1_2' placeholder={object_A1_2 ? object_A1_2.valor : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
