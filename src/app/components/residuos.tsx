@@ -1,9 +1,12 @@
 "use client"
 import { useState, useEffect } from 'react'
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
+import { useSearchParams } from 'next/navigation'
 
 export default function Residuos({ setLaEtapa, etapa, agregarDatos } : {setLaEtapa: any, etapa: any, agregarDatos: any}) {
-    if(!etapa){
+    const searchParams = useSearchParams()
+    const search = searchParams.get('categoria')
+    if(!etapa || search === 'residuos' && etapa !== 'Residuos de manejo especial' && etapa !== 'Residuos sólidos urbanos'){
         etapa = 'Residuos peligrosos'
     }
     return (

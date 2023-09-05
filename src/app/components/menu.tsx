@@ -2,10 +2,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Tag from './tag'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 
 export default function Menu({setLaEtapa = 'Etapa A1'} : {setLaEtapa?: any}) {
-    const pathname = usePathname()
     const searchParams = useSearchParams()
     const categorias = [
         {

@@ -2,9 +2,13 @@
 import { useEffect, useState } from 'react'
 import Loader from '../components/loader'
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
+import { useSearchParams } from 'next/navigation'
 
 export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } : {setLaEtapa: any, etapa: any, agregarDatos:any, losdatos:any}) {
-    if(!etapa){
+    const searchParams = useSearchParams()
+    const search = searchParams.get('categoria')
+    console.log(etapa)
+    if(etapa !== 'Etapa A1' && etapa !== 'Etapa A2' && etapa !== 'Etapa A3'){
         etapa = 'Etapa A1'
     }
 
