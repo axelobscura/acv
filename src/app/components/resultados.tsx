@@ -31,8 +31,8 @@ export default function Resultados({datos}: {datos: any}) {
                             <th className='bg-customVerdeDos'>Etapa</th>
                             <th className='bg-customVerdeDos'>tCO<sup>2</sup>e por consumo de combustible</th>
                             <th className='bg-customVerdeDos'>tCO<sup>2</sup>e por consumo de energía</th>
-                            <th className='bg-customVerdeDos'>Total de tCO2e</th>
-                            <th className='bg-customVerdeDos'>KgCO2e/unidad declarada</th>
+                            <th className='bg-customVerdeDos'>Total de tCO<sup>2</sup>e</th>
+                            <th className='bg-customVerdeDos'>KgCO<sup>2</sup>e/unidad declarada</th>
                         </tr>
                     </thead>
                     <tbody className='text-center'>
