@@ -84,13 +84,16 @@ export default function Resultados({datos}: {datos: any}) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr className='text-center'>
                             <td>20000</td>
                             <td>20000</td>
                             <td>20000</td>
                         </tr>
                     </tbody>
                 </table>
+                <div>
+                    <button className='font-orbitron bg-customVerdeDos p-3 mt-3'>GENERAR REPORTE</button>
+                </div>
             </div>
         </div>
     )
