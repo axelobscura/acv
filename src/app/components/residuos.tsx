@@ -11,12 +11,12 @@ export default function Residuos({ setLaEtapa, etapa, agregarDatos } : {setLaEta
     }
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
-            <div className="p-0 rounded-2xl w-full">
+            <div className="bg-customVerdeDos p-3 rounded-2xl w-full">
                 <h1 className="flex font-orbitron text-4xl pb-2"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Generación de Residuos</h1>
                 <hr className='mb-3'/>
                 {/*<p>{employee.message}</p>*/}
                 <div className='flex justify-around mb-0'>
-                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
+                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos shadow-inner' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
                     <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setLaEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
                     <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
                 </div>
