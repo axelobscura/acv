@@ -3,7 +3,7 @@ import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmall
 export default function Aguas() {
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
-            <div className="p-0 rounded-2xl w-full">
+            <div className="p-0 rounded-2xl w-full bg-customVerdeDos p-5">
                 <h1 className="flex font-orbitron text-4xl pb-2"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Consumo de Agua</h1>
                 <hr className='mb-3'/>
                 <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" />Consumo total de agua (I) para el año de declarado:</p>

@@ -60,12 +60,12 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                 <hr className='mb-3'/>
                 {/*<p>{employee.message}</p>*/}
                 <div className='flex justify-around mb-0'>
-                    <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Etapa A1' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => sacaValor('Etapa A1')}>Etapa A1</h2>
-                    <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Etapa A2' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => sacaValor('Etapa A2')}>Etapa A2</h2>
-                    <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Etapa A3' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => sacaValor('Etapa A3')}>Etapa A3</h2>
+                    <h2 className={`text-xs md:text-3xl font-orbitron w-full rounded-2xl ${etapa === 'Etapa A1' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => sacaValor('Etapa A1')}>Etapa A1</h2>
+                    <h2 className={`text-xs md:text-3xl font-orbitron w-full rounded-2xl ${etapa === 'Etapa A2' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => sacaValor('Etapa A2')}>Etapa A2</h2>
+                    <h2 className={`text-xs md:text-3xl font-orbitron w-full rounded-2xl ${etapa === 'Etapa A3' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => sacaValor('Etapa A3')}>Etapa A3</h2>
                 </div>
-                <h2 className='flex items-center font-orbitron text-2xl bg-customVerdeDos p-3'><ArrowSmallRightIcon className="h-5 w-5 text-gray-300 mr-1" /> {etapa}</h2>
-                <form className='bg-customVerdeDos p-5'>
+                <h2 className='flex items-center font-orbitron text-2xl bg-customVerdeDos p-3 rounded-2xl mt-0 mb-2'><ArrowSmallRightIcon className="h-5 w-5 text-gray-300 mr-1" /> {etapa}</h2>
+                <form className='bg-customVerdeDos p-5 rounded-2xl'>
                     <div className='etapaA1' style={{
                         display: etapa === 'Etapa A1' ? 'block' : 'none'
                     }}>

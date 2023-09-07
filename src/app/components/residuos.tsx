@@ -16,12 +16,12 @@ export default function Residuos({ setLaEtapa, etapa, agregarDatos } : {setLaEta
                 <hr className='mb-3'/>
                 {/*<p>{employee.message}</p>*/}
                 <div className='flex justify-around mb-0'>
-                    <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
-                    <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setLaEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
-                    <h2 className={`text-xs md:text-3xl font-orbitron w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
+                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
+                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setLaEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
+                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
                 </div>
-                <h2 className='flex items-center font-orbitron text-2xl bg-customVerdeDos p-3'><ArrowSmallRightIcon className="h-5 w-5 text-gray-300 mr-1" /> {etapa}</h2>
-                <form className='bg-customVerdeDos p-5'>
+                <h2 className='flex items-center font-orbitron text-2xl bg-customVerdeDos p-3 rounded-2xl mt-0 mb-2'><ArrowSmallRightIcon className="h-5 w-5 text-gray-300 mr-1" /> {etapa}</h2>
+                <form className='bg-customVerdeDos p-5 rounded-2xl'>
                     {etapa === 'Residuos peligrosos' &&
                         <div className='etapaA1'>
                             <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Generación de RP (kg):</p>
