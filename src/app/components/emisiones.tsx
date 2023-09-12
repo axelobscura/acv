@@ -10,14 +10,17 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     if(etapa !== 'Etapa A1' && etapa !== 'Etapa A2' && etapa !== 'Etapa A3'){
         etapa = 'Etapa A1'
     }
+    
     const [prendido, setPrendido] = useState('')
     const [lasPrimas, setLasPrimas] : [lasPrimas: any, setLasPrimas: any] = useState([])
     useEffect(() => {
         setPrendido(losdatos.filter((dato: any) => dato.nombre === etapa))
     }, [])
+
     const sacaValor = async (etapa: string) => {
         setLaEtapa(etapa);
     }
+
     const sacarDato = (e: any) => {
         let valor = e.target.value;
         let nombre = e.target.name;
@@ -27,6 +30,8 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     let mPrimas: string[] = [];
     const materiasPrimas = (e: any) => {
         let valor = e.target.value;
+        let nombre = e.target.name;
+        console.log(nombre);
         const exists = mPrimas.indexOf(valor) !== -1;
         if (lasPrimas.includes(valor)) {
             const index = lasPrimas.indexOf(valor);
@@ -87,23 +92,23 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto:</p>
                         <div className="flex space-x-4 p-2">
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} value='Polipropileno' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Polipropileno' value='Polipropileno' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Polipropileno</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} value='Grava' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Grava' value='Grava' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Grava</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} value='Cemento' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Cemento' value='Cemento' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Cemento</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} value='Arena' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Arena' value='Arena' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Arena</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} value='Agua' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Agua' value='Agua' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Agua</span>
                             </label>
                         </div>

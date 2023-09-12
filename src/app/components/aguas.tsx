@@ -1,6 +1,6 @@
 import { ChevronRightIcon, ArrowRightCircleIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
-export default function Aguas() {
+export default function Aguas({ agregarDatos } : { agregarDatos: any }) {
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
             <div className="p-0 rounded-2xl w-full bg-customVerdeDos p-5">
