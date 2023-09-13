@@ -29,10 +29,10 @@ export default function Resultados({datos}: {datos: any}) {
                     <thead>
                         <tr>
                             <th className='bg-customVerdeDos'>Etapa</th>
-                            <th className='bg-customVerdeDos'>tCO<sup>2</sup>e por consumo de combustible</th>
-                            <th className='bg-customVerdeDos'>tCO<sup>2</sup>e por consumo de energía</th>
-                            <th className='bg-customVerdeDos'>Total de tCO<sup>2</sup>e</th>
-                            <th className='bg-customVerdeDos'>KgCO<sup>2</sup>e/unidad declarada</th>
+                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl'>tCO<sup>2</sup>e por consumo de combustible</th>
+                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl'>tCO<sup>2</sup>e por consumo de energía</th>
+                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl'>Total de tCO<sup>2</sup>e</th>
+                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl'>KgCO<sup>2</sup>e/unidad declarada</th>
                         </tr>
                     </thead>
                     <tbody className='text-center'>

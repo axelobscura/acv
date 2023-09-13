@@ -29,10 +29,10 @@ export default function Residuos({ setLaEtapa, etapa, agregarDatos, losdatos } :
                 <h1 className="flex font-orbitron text-4xl pb-2"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Generación de Residuos</h1>
                 <hr className='mb-3'/>
                 {/*<p>{employee.message}</p>*/}
-                <div className='flex justify-around mb-0'>
-                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
-                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setLaEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
-                    <h2 className={`text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
+                <div className='flex justify-center align-center mb-0'>
+                    <h2 className={`flex align-center text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos peligrosos' ? 'bg-customVerdeDos shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]' : 'bg-customVerdeUno'} text-center hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos peligrosos')}>Residuos peligrosos</h2>
+                    <h2 className={`flex align-center text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos de manejo especial' ? 'bg-customVerdeDos shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer ml-1 mr-1`} onClick={() => setLaEtapa('Residuos de manejo especial')}>Residuos de manejo especial</h2>
+                    <h2 className={`flex align-center text-xs md:text-3xl font-orbitron rounded-2xl w-full ${etapa === 'Residuos sólidos urbanos' ? 'bg-customVerdeDos shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]' : 'bg-customVerdeUno'} text-center p-3 hover:bg-customVerdeDos cursor-pointer`} onClick={() => setLaEtapa('Residuos sólidos urbanos')}>Residuos sólidos urbanos</h2>
                 </div>
                 <form className='bg-customVerdeDos p-5 rounded-2xl'>
                     {etapa === 'Residuos peligrosos' &&
