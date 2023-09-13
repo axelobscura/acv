@@ -1,8 +1,14 @@
 import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
+import { useEffect } from 'react'
 
 export default function Resultados({datos}: {datos: any}) {
 
-    console.log('DATOS: ' + JSON.stringify(datos))
+    const rp = datos.filter((nom: any) => nom.nombre === 'Generación de RP (kg)');
+    const rp2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RP que se reutilizaron (kg)');
+    const rme = datos.filter((nom: any) => nom.nombre === 'Generación de RME (kg)');
+    const rme2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RME que se reutilizaron (kg)');
+    const rsu = datos.filter((nom: any) => nom.nombre === 'Generación de RSU (kg)');
+    const rsu2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RSU que se reutilizaron (kg)');
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
@@ -67,7 +73,7 @@ export default function Resultados({datos}: {datos: any}) {
                             <th className='bg-customVerdeDos'>Consumo de Agua por Unidad Declarada</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='text-2xl text-center font-bold'>
                         <tr>
                             <td>20000</td>
                         </tr>
@@ -83,11 +89,11 @@ export default function Resultados({datos}: {datos: any}) {
                             <th className='bg-customVerdeDos'>Índice de Circularidad RSU (%)</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr className='text-center'>
-                            <td>20000</td>
-                            <td>20000</td>
-                            <td>20000</td>
+                    <tbody className='text-2xl text-center font-bold'>
+                        <tr className=''>
+                            <td>{rp.length && rp2.length ? ((rp2[0].valor * 100) / rp[0].valor).toFixed(4) : 'FALTAN VALORES'}</td>
+                            <td>{rme.length && rme2.length ? ((rme2[0].valor * 100) / rme[0].valor).toFixed(4) : 'FALTAN VALORES'}</td>
+                            <td>{rsu.length && rsu2.length ? ((rsu2[0].valor * 100) / rsu[0].valor).toFixed(4) : 'FALTAN VALORES'}</td>
                         </tr>
                     </tbody>
                 </table>

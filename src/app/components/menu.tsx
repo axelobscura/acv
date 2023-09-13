@@ -55,7 +55,9 @@ export default function Menu({setLaEtapa = 'Etapa A1'} : {setLaEtapa?: any}) {
                     <button 
                         className={`font-orbitron ${search == ele.link ? 'bg-green-800' : 'bg-customVerde'} ${search ? 'text-xs' : 'text-lg'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
                     >
+                        {/*
                         <Tag ide={ele.link}/>
+                        */}
                         {ele.nombre}
                     </button>
                 </Link>
