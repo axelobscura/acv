@@ -60,24 +60,24 @@ export default function Resultados({datos}: {datos: any}) {
                     <tbody className='text-center'>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A1</td>
-                            <td>20000</td>
-                            <td>20000</td>
-                            <td>20000</td>
-                            <td>20000</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A2</td>
-                            <td>20000</td>
-                            <td>20000</td>
-                            <td>20000</td>
-                            <td>20000</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A3</td>
-                            <td>20000</td>
-                            <td>20000</td>
-                            <td>20000</td>
-                            <td>20000</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                     </tbody>
                 </table>
