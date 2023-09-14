@@ -1,16 +1,30 @@
+import { useState } from 'react';
 import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
-import { useEffect } from 'react'
+import Modal from './modal';
 
 export default function Resultados({datos}: {datos: any}) {
-
+    const [modalOpen, setModalOpen] = useState(false)
     console.log('DATOS: ' + JSON.stringify(datos))
 
+    const openModal = () => {
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
+    // EMISIONES
+    const pt = datos.filter((nom: any) => nom.nombre === 'A1_3');
+    // RESIDUOS
     const rp = datos.filter((nom: any) => nom.nombre === 'Generación de RP (kg)');
     const rp2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RP que se reutilizaron (kg)');
     const rme = datos.filter((nom: any) => nom.nombre === 'Generación de RME (kg)');
     const rme2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RME que se reutilizaron (kg)');
     const rsu = datos.filter((nom: any) => nom.nombre === 'Generación de RSU (kg)');
     const rsu2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RSU que se reutilizaron (kg)');
+    // AGUAS
+    const ca = datos.filter((nom: any) => nom.nombre === 'Consumo total de agua para el año de declarado');
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
@@ -77,7 +91,7 @@ export default function Resultados({datos}: {datos: any}) {
                     </thead>
                     <tbody className='text-2xl text-center font-bold'>
                         <tr>
-                            <td>20000</td>
+                            <td>{ca.length && pt.length ? (ca[0].valor / pt[0].valor).toFixed(4) : 'FALTAN VALORES'}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -99,8 +113,9 @@ export default function Resultados({datos}: {datos: any}) {
                         </tr>
                     </tbody>
                 </table>
+                <Modal isOpen={modalOpen} onClose={closeModal} />
                 <div>
-                    <button className='font-orbitron bg-customVerdeDos p-3 mt-3'>GENERAR REPORTE</button>
+                    <button className='font-orbitron bg-customVerdeDos p-3 mt-3' onClick={openModal}>AGREGAR DOCUMENTACIÓN</button>
                 </div>
             </div>
         </div>
