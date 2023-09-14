@@ -48,7 +48,7 @@ export default function Menu({setLaEtapa = 'Etapa A1'} : {setLaEtapa?: any}) {
                     </div>
                 </Link>
                 <p className='font-orbitron text-xs pt-3 mt-3'>Instituto Mexicano del Cemento y del Concreto A.C.</p>
-                <h2 className='font-orbitron text-xl pt-5 pb-0 mb-0'>ANÁLISIS DE CICLO DE VIDA</h2>
+                <h2 className='font-orbitron text-3xl pt-5 pb-0 mb-0 font-bold'>ANÁLISIS DE CICLO DE VIDA</h2>
             </div>
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={`/calculadora?categoria=${ele.link}`} key={ele.nombre}>

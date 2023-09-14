@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 
 export default function Resultados({datos}: {datos: any}) {
 
+    console.log('DATOS: ' + JSON.stringify(datos))
+
     const rp = datos.filter((nom: any) => nom.nombre === 'Generación de RP (kg)');
     const rp2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RP que se reutilizaron (kg)');
     const rme = datos.filter((nom: any) => nom.nombre === 'Generación de RME (kg)');
