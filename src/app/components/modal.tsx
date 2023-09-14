@@ -8,7 +8,8 @@ export default function Modal({ isOpen, onClose } : { isOpen : any, onClose : an
       <div className="sm:w-full md:w-1/2 bg-customVerdeDos p-6 rounded-sm shadow-lg z-50">
         <h2 className="text-xl font-bold mb-4">Documentación</h2>
         <hr/>
-        <p className="pt-5 text-sm">Para poder generar su análisis certificado por el Instituto Mexicano del Cemento y del Concreto, es necesario presentar la siguiente documentación:</p>
+        <p className="pt-5 pb-5 text-sm">Para poder generar su análisis certificado por el Instituto Mexicano del Cemento y del Concreto, es necesario presentar la siguiente documentación:</p>
+        <hr/>
         <form className="flex items-center space-x-6 mt-5">
           <div className="shrink-0">
             <img className="h-16 w-16 object-cover rounded-full" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80" alt="Current profile photo" />

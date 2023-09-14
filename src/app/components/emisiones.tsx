@@ -31,7 +31,6 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     const materiasPrimas = (e: any) => {
         let valor = e.target.value;
         let nombre = e.target.name;
-        console.log(nombre);
         const exists = mPrimas.indexOf(valor) !== -1;
         if (lasPrimas.includes(valor)) {
             const index = lasPrimas.indexOf(valor);
@@ -39,7 +38,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
             setLasPrimas(lasPrimas)
         } else {
             mPrimas.push(valor);
-            setLasPrimas([...lasPrimas, valor])
+            setLasPrimas([...lasPrimas, {nombre: nombre, valor: valor}])
         }
     }
 
@@ -92,23 +91,23 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto:</p>
                         <div className="flex space-x-4 p-2">
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} name='Polipropileno' value='Polipropileno' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Polipropileno' value='2.37' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Polipropileno</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} name='Grava' value='Grava' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Grava' value='8.42' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Grava</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} name='Cemento' value='Cemento' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Cemento' value='257.355' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Cemento</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} name='Arena' value='Arena' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Arena' value='6.28' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Arena</span>
                             </label>
                             <label className="inline-flex items-center">
-                                <input type="checkbox" onChange={materiasPrimas} name='Agua' value='Agua' className="form-checkbox accent-customVerdeDos h-7 w-7" />
+                                <input type="checkbox" onChange={materiasPrimas} name='Agua' value='0.1' className="form-checkbox accent-customVerdeDos h-7 w-7" />
                                 <span className="font-orbitron ml-2">Agua</span>
                             </label>
                         </div>
