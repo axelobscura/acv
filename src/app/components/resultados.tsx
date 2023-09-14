@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
+import { ArrowRightCircleIcon, ArrowDownCircleIcon } from '@heroicons/react/24/solid'
 import Modal from './modal';
 
 export default function Resultados({datos}: {datos: any}) {
@@ -29,7 +29,7 @@ export default function Resultados({datos}: {datos: any}) {
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
             <div className="pt-0 w-full">
-                <h1 className="font-orbitron text-4xl flex"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Resultados</h1>
+                <h1 className="font-orbitron text-4xl flex"><ArrowRightCircleIcon className="h-10 w-10 text-gray-900" /> Resultados</h1>
                 <hr className='mb-3 mt-2' />
                 <p className='font-orbitron text-xs pb-3'>En esta sección se arrojaran una tablas resumen con las emisiones de CO<sup>2</sup> por unidad declarada de producto, para cada una de las etapa (A1, A2 y A3), además con el consumo por unidad declarada y un índice de circularidad de reutilización de residuos.</p>
                 <hr/>
@@ -46,7 +46,7 @@ export default function Resultados({datos}: {datos: any}) {
                     }
                 })}
                 <hr/>
-                <h3 className='font-orbitron text-2xl text-white text-bold pt-3 pb-1'>Generación de Dióxido de Carbono equivalente</h3>
+                <h3 className='flex align-center font-orbitron text-2xl text-white text-bold pt-1 pb-1'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro" />Generación de Dióxido de Carbono equivalente</h3>
                 <table className="font-orbitron table-fixed border-separate border-spacing-2 border border-white w-full">
                     <thead>
                         <tr>
@@ -81,8 +81,8 @@ export default function Resultados({datos}: {datos: any}) {
                         </tr>
                     </tbody>
                 </table>
-                <hr className='mb-3 mt-2' />
-                <h3 className='font-orbitron text-2xl text-white text-bold pt-3 pb-3'>Consumo de Agua</h3>
+                <hr className='mb-1 mt-2' />
+                <h3 className='flex align-center font-orbitron text-2xl text-white text-bold mb-2 mt-2'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro mt-1"/>Consumo de Agua</h3>
                 <table className="font-orbitron table-fixed border-separate border-spacing-2 border border-white w-full">
                     <thead>
                         <tr>
@@ -95,8 +95,8 @@ export default function Resultados({datos}: {datos: any}) {
                         </tr>
                     </tbody>
                 </table>
-                <hr className='mb-3 mt-2' />
-                <h3 className='font-orbitron text-2xl text-white text-bold pt-3 pb-3'>Índice de Circularidad</h3>
+                <hr className='mb-1 mt-2' />
+                <h3 className='flex align-center font-orbitron text-2xl text-white text-bold pt-1 pb-3'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro mt-1"/>Índice de Circularidad</h3>
                 <table className="font-orbitron table-fixed border-separate border-spacing-2 border border-white w-full">
                     <thead>
                         <tr>
@@ -115,7 +115,7 @@ export default function Resultados({datos}: {datos: any}) {
                 </table>
                 <Modal isOpen={modalOpen} onClose={closeModal} />
                 <div>
-                    <button className='font-orbitron bg-customVerdeDos p-3 mt-3' onClick={openModal}>AGREGAR DOCUMENTACIÓN</button>
+                    <button className='font-orbitron bg-customVerdeDos p-3 mt-5' onClick={openModal}>AGREGAR DOCUMENTACIÓN</button>
                 </div>
             </div>
         </div>
