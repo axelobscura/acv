@@ -46,7 +46,7 @@ export default function Resultados({datos}: {datos: any}) {
                     }
                 })}
                 <hr/>
-                <h3 className='flex align-center font-orbitron text-2xl text-white text-bold pt-1 pb-1'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro" />Generación de Dióxido de Carbono equivalente</h3>
+                <h3 className='flex items-center font-orbitron text-2xl text-white text-bold pt-1 pb-1'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro" />Generación de Dióxido de Carbono equivalente</h3>
                 <table className="font-orbitron table-fixed border-separate border-spacing-2 border border-white w-full">
                     <thead>
                         <tr>
@@ -82,7 +82,7 @@ export default function Resultados({datos}: {datos: any}) {
                     </tbody>
                 </table>
                 <hr className='mb-1 mt-2' />
-                <h3 className='flex align-center font-orbitron text-2xl text-white text-bold mb-2 mt-2'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro mt-1"/>Consumo de Agua</h3>
+                <h3 className='flex items-center font-orbitron text-2xl text-white text-bold mb-2 mt-2'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro"/>Consumo de Agua</h3>
                 <table className="font-orbitron table-fixed border-separate border-spacing-2 border border-white w-full">
                     <thead>
                         <tr>
@@ -96,7 +96,7 @@ export default function Resultados({datos}: {datos: any}) {
                     </tbody>
                 </table>
                 <hr className='mb-1 mt-2' />
-                <h3 className='flex align-center font-orbitron text-2xl text-white text-bold pt-1 pb-3'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro mt-1"/>Índice de Circularidad</h3>
+                <h3 className='flex items-center font-orbitron text-2xl text-white text-bold pt-1 pb-3'><ArrowDownCircleIcon className="h-7 w-7 mr-2 text-customVerdeCuatro"/>Índice de Circularidad</h3>
                 <table className="font-orbitron table-fixed border-separate border-spacing-2 border border-white w-full">
                     <thead>
                         <tr>
