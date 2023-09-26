@@ -111,6 +111,8 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                                 <span className="font-orbitron ml-2">Agua</span>
                             </label>
                         </div>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Agregar otras materias primas que se usan para la fabricación del producto<br></br>(separar con comas, eje. grava, cemento, arena):</p>
+                        <input type="text" onBlur={sacarDato} name='A1_otros' placeholder='Agregar materia prima, separar con comas, eje. grava, cemento, arena' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         {/*
                         <select onChange={sacarDato} name='A1_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
                             <option value={object_A1_4 ? object_A1_4.valor : ''}>{object_A1_4 ? object_A1_4.valor : ''}</option>

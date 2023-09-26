@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRightCircleIcon, ArrowDownCircleIcon } from '@heroicons/react/24/solid'
 import Modal from './modal';
+import SideBar from './sidebar';
 
 export default function Resultados({datos}: {datos: any}) {
     const [modalOpen, setModalOpen] = useState(false)
-    console.log('DATOS: ' + JSON.stringify(datos))
+    //console.log('DATOS: ' + JSON.stringify(datos))
 
     const openModal = () => {
         setModalOpen(true);
@@ -25,6 +26,10 @@ export default function Resultados({datos}: {datos: any}) {
     const rsu2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RSU que se reutilizaron (kg)');
     // AGUAS
     const ca = datos.filter((nom: any) => nom.nombre === 'Consumo total de agua para el año de declarado');
+
+    const A1_0 = datos.filter((nom: any) => nom.nombre === 'primas');
+
+    //console.log('A1_0', A1_0)
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
@@ -60,24 +65,24 @@ export default function Resultados({datos}: {datos: any}) {
                     <tbody className='text-center'>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A1</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A2</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A3</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
                         </tr>
                     </tbody>
                 </table>
@@ -117,6 +122,9 @@ export default function Resultados({datos}: {datos: any}) {
                 <div>
                     <button className='font-orbitron bg-customVerdeDos p-3 mt-5' onClick={openModal}>AGREGAR DOCUMENTACIÓN</button>
                 </div>
+                {/*
+                    <SideBar/>
+                */}
             </div>
         </div>
     )
