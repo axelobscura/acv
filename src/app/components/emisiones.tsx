@@ -88,6 +88,14 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <input type="text" onBlur={sacarDato} name='A1_2' placeholder={object_A1_2 ? object_A1_2.valor : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
                         <input type="number" onBlur={sacarDato} name='A1_3' placeholder={object_A1_3 ? object_A1_3.valor : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+
+
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Unidad de medida:</p>
+                        <input type="number" onBlur={sacarDato} name='A1_5' placeholder={object_A1_4 ? object_A1_4.valor : 'Introduce la unidad declarada del producto (Ej. kg, m3, l, etc).'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> ¿Cuenta con información de la generación de GEI de las materias primas que se implementan para la elaboración del producto?</p>
+                        <input type="number" onBlur={sacarDato} name='A1_5' placeholder={object_A1_4 ? object_A1_4.valor : 'Introduce la unidad declarada del producto (Ej. kg, m3, l, etc).'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+
+
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto:</p>
                         <div className="flex space-x-4 p-2">
                             <label className="inline-flex items-center">
