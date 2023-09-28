@@ -44,7 +44,7 @@ export default function Calculadora() {
           <div className="basis-1/4">
             <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)}/>
           </div>
-          <div className="sm:pl-0 sm:pr-0 md:pl-10 md:pr-10  pt-5 w-full">
+          <div className="sm:pl-0 sm:pr-0 md:pl-10 md:pr-10 pt-5 w-full">
             {categoria == "emisiones" && <Emisiones setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={datos}/>}
             {categoria == "residuos" && <Residuos setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={datos}/>}
             {categoria == "aguas" && <Aguas agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={datos}/>}

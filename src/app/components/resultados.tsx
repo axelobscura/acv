@@ -32,7 +32,7 @@ export default function Resultados({datos}: {datos: any}) {
     //console.log('A1_0', A1_0)
 
     return (
-        <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
+        <div className="flex flex-col sm:flex-row w-full justify-space-evenly shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)] p-5">
             <div className="pt-0 w-full">
                 <h1 className="font-orbitron text-4xl flex"><ArrowRightCircleIcon className="h-10 w-10 text-gray-900" /> Resultados</h1>
                 <hr className='mb-3 mt-2' />
