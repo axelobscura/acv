@@ -73,7 +73,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         display: etapa === 'Etapa A1' ? 'block' : 'none'
                     }}>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Año de declaración:</p>
-                        <select onChange={sacarDato} name='A1_1' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
+                        <select onChange={sacarDato} name='A1_1' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3">
                             <option value={object_A1_1 ? object_A1_1.valor : ''}>{object_A1_1 ? object_A1_1.valor : ''}</option>
                             <option value='2017'>2017</option>
                             <option value='2018'>2018</option>
@@ -85,13 +85,13 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                             <option value='2024'>2024</option>
                         </select>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Nombre común del producto:</p>
-                        <input type="text" onBlur={sacarDato} name='A1_2' placeholder={object_A1_2 ? object_A1_2.valor : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="text" onBlur={sacarDato} name='A1_2' placeholder={object_A1_2 ? object_A1_2.valor : 'Nombre común del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
-                        <input type="number" onBlur={sacarDato} name='A1_3' placeholder={object_A1_3 ? object_A1_3.valor : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="number" onBlur={sacarDato} name='A1_3' placeholder={object_A1_3 ? object_A1_3.valor : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
 
 
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Unidad de medida:</p>
-                        <input type="number" onBlur={sacarDato} name='A1_5' placeholder={object_A1_4 ? object_A1_4.valor : 'Introduce la unidad declarada del producto (Ej. kg, m3, l, etc).'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="number" onBlur={sacarDato} name='A1_5' placeholder={object_A1_4 ? object_A1_4.valor : 'Introduce la unidad declarada del producto (Ej. kg, m3, l, etc).'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> ¿Cuenta con información de la generación de GEI de las materias primas que se implementan para la elaboración del producto?</p>
                         <div className="flex items-center justify-center">
                             <label className="inline-flex items-center m-3">
@@ -103,9 +103,33 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                                 <span className="ml-2">NO</span>
                             </label>
                         </div>
-                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Introduce los valores de generación de cada una de las materias primas (kg CO2e/unidad declarada)</p>
-
-
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Introduce los valores de generación de cada una de las materias primas (kg CO2e/unidad declarada):</p>
+                        <div className='flex'>
+                            <input type="text" name='p1' placeholder="Materia Prima" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                            <input type="number" name='p1Valor' placeholder="Cantidad" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                        </div>
+                        <div className='flex my-2'>
+                            <input type="text" name='p1' placeholder="Materia Prima" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                            <input type="number" name='p1Valor' placeholder="Cantidad" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                        </div>
+                        <div className='flex my-2'>
+                            <input type="text" name='p1' placeholder="Materia Prima" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                            <input type="number" name='p1Valor' placeholder="Cantidad" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                        </div>
+                        <div className='flex my-2'>
+                            <button className='font-orbitron bg-customVerdeUno p-3 mt-2 w-full mx-2'>AGREGAR MATERIA PRIMA</button>
+                        </div>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona el producto</p>
+                        <div className="flex items-center justify-center">
+                            <label className="inline-flex items-center m-3">
+                                <input type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="radio-buttons" value="option1"></input>
+                                <span className="ml-2">Concreto</span>
+                            </label>
+                            <label className="inline-flex items-center m-3">
+                                <input type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="radio-buttons" value="option2"></input>
+                                <span className="ml-2">Macrofibras de polipropileno</span>
+                            </label>
+                        </div>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto:</p>
                         <div className="flex space-x-4 p-2">
                             <label className="inline-flex items-center">
@@ -129,8 +153,20 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                                 <span className="font-orbitron ml-2">Agua</span>
                             </label>
                         </div>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricaión del producto (en el caso de que se seleccione macrofibras de polipropileno):</p>
+                        <div className='flex'>
+                            <input type="number" name='p2Valor' placeholder="Cantidad de polipropileno virgen (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                        </div>
+                        <div className='flex my-2'>
+                            <input type="number" name='p2Valor' placeholder="Cantidad de polipropileno reciclado (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                        </div>
+
+
+
+
+
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Agregar otras materias primas que se usan para la fabricación del producto<br></br>(separar con comas, eje. grava, cemento, arena):</p>
-                        <input type="text" onBlur={sacarDato} name='A1_otros' placeholder='Agregar materia prima, separar con comas, eje. grava, cemento, arena' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <input type="text" onBlur={sacarDato} name='A1_otros' placeholder='Agregar materia prima, separar con comas, eje. grava, cemento, arena' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
                         {/*
                         <select onChange={sacarDato} name='A1_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full">
                             <option value={object_A1_4 ? object_A1_4.valor : ''}>{object_A1_4 ? object_A1_4.valor : ''}</option>
