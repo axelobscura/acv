@@ -7,6 +7,7 @@ import Residuos from '../components/residuos'
 import Aguas from '../components/aguas'
 import Resultados from '../components/resultados'
 import { useState } from 'react'
+import React from 'react'
 
 export default function Calculadora() {
     const searchParams = useSearchParams()

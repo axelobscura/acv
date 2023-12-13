@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Open_Sans, Roboto_Mono, Orbitron } from 'next/font/google'
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Análisis de Ciclo de Vida | Instituto Mexicano del Cemento y del Concreto A.C.',
