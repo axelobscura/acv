@@ -54,7 +54,7 @@ export default function Menu({setLaEtapa = 'Etapa A1'} : {setLaEtapa?: any}) {
             {categorias.map((ele: any) => (
                 <Link className='w-full' href={`/calculadora?categoria=${ele.link}`} key={ele.nombre}>
                     <button 
-                        className={`font-orbitron ${search == ele.link ? 'bg-green-800' : 'bg-customVerde'} ${search ? 'text-xs' : 'text-lg'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
+                        className={`font-orbitron ${search == ele.link ? 'bg-green-800' : 'bg-customVerde'} ${search ? 'text-md' : 'text-lg'} hover:bg-green-800 text-gray-100 hover:text-white font-bold py-2 px-4 rounded-full w-full mt-5 py-5 shadow-sm`}
                     >
                         {ele.nombre}
                     </button>
