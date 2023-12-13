@@ -31,6 +31,8 @@ export default function Calculadora() {
       setDatos(arrayUniqueByKey)
     }, [losdatos])
 
+    console.log('datos: ', datos);
+
     return (
       <main className="flex min-h-screen flex-col p-5" style={{
         'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.90), rgba(29, 40, 6, 0.95)), url("/bkg1.jpg")',
