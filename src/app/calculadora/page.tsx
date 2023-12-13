@@ -32,7 +32,7 @@ export default function Calculadora() {
     }, [losdatos])
 
     return (
-      <main className="flex min-h-screen align-center flex-col p-5" style={{
+      <main className="flex min-h-screen flex-col p-5" style={{
         'backgroundImage': 'linear-gradient(to bottom, rgba(95, 133, 22, 0.90), rgba(29, 40, 6, 0.95)), url("/bkg1.jpg")',
         'backgroundSize': 'cover', /* makes the bg image responsive */
         'backgroundRepeat': 'no-repeat',
@@ -43,7 +43,7 @@ export default function Calculadora() {
       }}>
         <div className="flex flex-col sm:flex-row w-full h-full justify-center">
           <div className="basis-1/4">
-            <div className='mt-5 bg-customVerdeDos rounded-2xl w-full shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>
+            <div className='mt-5 pb-5 bg-customVerdeDos rounded-2xl w-full shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>
               <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)}/>
             </div>
           </div>
