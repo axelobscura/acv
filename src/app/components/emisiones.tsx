@@ -28,21 +28,6 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
         agregarDatos({nombre, valor})
     }
     
-    let mPrimas: string[] = [];
-    const materiasPrimas = (e: any) => {
-        let valor = e.target.value;
-        let nombre = e.target.name;
-        const exists = mPrimas.indexOf(valor) !== -1;
-        if (lasPrimas.includes(valor)) {
-            const index = lasPrimas.indexOf(valor);
-            lasPrimas.splice(index, 1);
-            setLasPrimas(lasPrimas)
-        } else {
-            mPrimas.push(valor);
-            setLasPrimas([...lasPrimas, {nombre: nombre, valor: valor}])
-        }
-    }
-
     useEffect(() => {
         if(lasPrimas.length){
             agregarDatos({'nombre':'primas', 'valor':[...lasPrimas]})
