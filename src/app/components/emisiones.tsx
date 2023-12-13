@@ -58,7 +58,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly">
-            <div className="bg-customVerdeDos p-3 rounded-2xl w-full shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]">
+            <div className="bg-customVerdeDos p-5 rounded-2xl w-full shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]">
                 <h1 className="flex font-orbitron text-4xl pb-2"><ArrowRightCircleIcon className="h-10 w-10 text-gray-300" /> Emisiones de Gases de Efecto Invernadero</h1>
                 <hr className='mb-3'/>
                 {/*<p>{employee.message}</p>*/}

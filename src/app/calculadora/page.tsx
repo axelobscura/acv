@@ -41,11 +41,13 @@ export default function Calculadora() {
         'alignItems': 'center',
         'justifyContent': 'center',
       }}>
-        <div className="flex flex-col sm:flex-row w-full h-full items-center justify-center">
+        <div className="flex flex-col sm:flex-row w-full h-full justify-center">
           <div className="basis-1/4">
-            <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)}/>
+            <div className='mt-5 bg-customVerdeDos p-3 pt-5 rounded-2xl w-full shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>
+              <Menu setLaEtapa={(etapa: any) => setLaEtapa(etapa)}/>
+            </div>
           </div>
-          <div className="sm:pl-0 sm:pr-0 md:pl-10 md:pr-10 pt-5 w-full">
+          <div className="sm:pl-0 sm:pr-0 md:pl-5 md:pr-5 pt-5 w-full">
             {categoria == "emisiones" && <Emisiones setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={datos}/>}
             {categoria == "residuos" && <Residuos setLaEtapa={(etapa: any) => setLaEtapa(etapa)} etapa={etapa} agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={datos}/>}
             {categoria == "aguas" && <Aguas agregarDatos={(dato: any) => agregarDatos(dato)} losdatos={datos}/>}
