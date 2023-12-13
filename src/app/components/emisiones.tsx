@@ -88,7 +88,22 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Producción total del producto para el año declarado:</p>
                         <input type="number" onBlur={sacarDato} name='A1_3' placeholder={object_A1_3 ? object_A1_3.valor : 'Producción total del producto para el año declarado'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Unidad declarada:</p>
-                        <input type="number" onBlur={sacarDato} name='A1_5' placeholder={object_A1_4 ? object_A1_4.valor : 'Introduce la unidad declarada del producto (Ej. kg, m3, l, etc).'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                        <div className='flex w-full'>
+                            <div className='w-full m-2'>
+                                <p className='flex font-orbitron text-gray-100 mb-2 ml-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Valor:</p>
+                                <input type="number" onBlur={sacarDato} name='A1_5' placeholder={object_A1_4 ? object_A1_4.valor : 'Introduce el valor de la unidad declarada del producto'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                            </div>
+                            <div className='w-full m-2'>
+                                <p className='flex font-orbitron text-gray-100 mb-2 ml-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Unidad:</p>
+                                <select onChange={sacarDato} name='A1_51' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3">
+                                    <option value={object_A1_1 ? object_A1_1.valor : ''}>{object_A1_1 ? object_A1_1.valor : ''}</option>
+                                    <option value='Kg'>Kg</option>
+                                    <option value='m3'>M<sup>3</sup></option>
+                                    <option value='L'>L</option>
+                                </select>
+                            </div>
+                        </div>
+                        
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona el producto</p>
                         <div className="flex items-center justify-center">
                             <label className="inline-flex items-center m-3">
