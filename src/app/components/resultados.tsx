@@ -4,7 +4,9 @@ import Modal from './modal';
 import SideBar from './sidebar';
 
 export default function Resultados({datos}: {datos: any}) {
-    const [modalOpen, setModalOpen] = useState(false)
+    const [modalOpen, setModalOpen] = useState(false);
+    const [productoVal, setProductoVal] = useState(0);
+    const [poliVal, setPoliVal] = useState(0);
     //console.log('DATOS: ' + JSON.stringify(datos))
 
     const openModal = () => {
@@ -17,14 +19,41 @@ export default function Resultados({datos}: {datos: any}) {
 
     // EMISIONES
     const pt = datos.filter((nom: any) => nom.nombre === 'A1_3');
+    const producto = datos.filter((nom: any) => nom.nombre === 'A1_6');
+    const productoValor = producto[0]?.valor ? producto[0].valor : 0;
+    
+    const polivirgen = datos.filter((nom: any) => nom.nombre === 'A1_7');
+    const polireciclado = datos.filter((nom: any) => nom.nombre === 'A1_8');
+
+    console.log(polivirgen);
+    useEffect(() => {
+        if(productoValor === 'concreto'){
+            setProductoVal(272.155);
+        } else if(polivirgen && polireciclado) {
+            let virgen = (Number(polivirgen[0]?.valor) ? Number(polivirgen[0]?.valor) : 0) * 1.343;
+            let poli = (Number(polireciclado[0]?.valor) ? Number(polireciclado[0]?.valor) : 0) * 0.183;
+            let politotal = virgen + poli;
+            setProductoVal(politotal / 375000);
+        } else if(polivirgen && !polireciclado) {
+            setProductoVal(1.343);
+        } else if(!polivirgen && polireciclado) {
+            setProductoVal(0.183);
+        } else {
+            setProductoVal(0);
+        }
+    }, [])
+    
     // RESIDUOS
+
     const rp = datos.filter((nom: any) => nom.nombre === 'Generación de RP (kg)');
     const rp2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RP que se reutilizaron (kg)');
     const rme = datos.filter((nom: any) => nom.nombre === 'Generación de RME (kg)');
     const rme2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RME que se reutilizaron (kg)');
     const rsu = datos.filter((nom: any) => nom.nombre === 'Generación de RSU (kg)');
     const rsu2 = datos.filter((nom: any) => nom.nombre === 'Cantidad de RSU que se reutilizaron (kg)');
+    
     // AGUAS
+    
     const ca = datos.filter((nom: any) => nom.nombre === 'Consumo total de agua para el año de declarado');
 
     const A1_0 = datos.filter((nom: any) => nom.nombre === 'primas');
@@ -65,10 +94,10 @@ export default function Resultados({datos}: {datos: any}) {
                     <tbody className='text-center'>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A1</td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><b>{productoVal}</b></td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A2</td>

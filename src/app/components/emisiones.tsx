@@ -38,6 +38,8 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     const object_A1_2 = losdatos.find((obj: any) => obj.nombre === 'A1_2');
     const object_A1_3 = losdatos.find((obj: any) => obj.nombre === 'A1_3');
     const object_A1_4 = losdatos.find((obj: any) => obj.nombre === 'A1_4');
+    const object_A1_5 = losdatos.find((obj: any) => obj.nombre === 'A1_5');
+    const object_A1_51 = losdatos.find((obj: any) => obj.nombre === 'A1_51');
     const object_A2_1 = losdatos.find((obj: any) => obj.nombre === 'A2_1');
     const object_A2_2 = losdatos.find((obj: any) => obj.nombre === 'A2_2');
 
@@ -92,20 +94,21 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona el producto</p>
                         <div className="flex items-center justify-center">
                             <label className="inline-flex items-center m-3">
-                                <input type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="radio-buttons" value="option1"></input>
+                                <input onChange={sacarDato} type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="A1_6" value="concreto"></input>
                                 <span className="ml-2 font-orbitron text-gray-100">Concreto</span>
                             </label>
                             <label className="inline-flex items-center m-3">
-                                <input type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="radio-buttons" value="option2"></input>
+                                <input onChange={sacarDato} type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="A1_6" value="macrofibras"></input>
                                 <span className="ml-2 font-orbitron text-gray-100">Macrofibras</span>
                             </label>
                         </div>
+                        
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricaión del producto (en el caso de que se seleccione macrofibras de polipropileno):</p>
                         <div className='flex'>
-                            <input type="number" name='p2Valor' placeholder="Cantidad de polipropileno virgen (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                            <input type="number" onBlur={sacarDato} name='A1_7' placeholder="Cantidad de polipropileno virgen (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
                         </div>
                         <div className='flex my-2'>
-                            <input type="number" name='p2Valor' placeholder="Cantidad de polipropileno reciclado (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                            <input type="number" onBlur={sacarDato} name='A1_8' placeholder="Cantidad de polipropileno reciclado (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
                         </div>
                         <div className='flex w-full justify-end mt-2'>
                             <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
