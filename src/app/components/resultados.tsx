@@ -25,7 +25,6 @@ export default function Resultados({datos}: {datos: any}) {
     const polivirgen = datos.filter((nom: any) => nom.nombre === 'A1_7');
     const polireciclado = datos.filter((nom: any) => nom.nombre === 'A1_8');
 
-    console.log(polivirgen);
     useEffect(() => {
         if(productoValor === 'concreto'){
             setProductoVal(272.155);
@@ -101,9 +100,9 @@ export default function Resultados({datos}: {datos: any}) {
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A2</td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>12.73</b></td>
+                            <td><b></b></td>
+                            <td><b>12.73</b></td>
                             <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
                         </tr>
                         <tr>

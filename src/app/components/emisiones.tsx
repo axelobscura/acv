@@ -14,6 +14,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     
     const [prendido, setPrendido] = useState('')
     const [lasPrimas, setLasPrimas] : [lasPrimas: any, setLasPrimas: any] = useState([])
+    const [esMacrofibra, setEsMacrofibra] = useState(false)
     useEffect(() => {
         setPrendido(losdatos.filter((dato: any) => dato.nombre === etapa))
     }, [])
@@ -25,6 +26,13 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
     const sacarDato = (e: any) => {
         let valor = e.target.value;
         let nombre = e.target.name;
+        if(nombre === 'A1_6'){
+            if(valor === 'macrofibras'){
+                setEsMacrofibra(true);
+            } else {
+                setEsMacrofibra(false);
+            }
+        }
         agregarDatos({nombre, valor})
     }
     
@@ -103,16 +111,20 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                             </label>
                         </div>
                         
-                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricaión del producto (en el caso de que se seleccione macrofibras de polipropileno):</p>
-                        <div className='flex'>
-                            <input type="number" onBlur={sacarDato} name='A1_7' placeholder="Cantidad de polipropileno virgen (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
-                        </div>
-                        <div className='flex my-2'>
-                            <input type="number" onBlur={sacarDato} name='A1_8' placeholder="Cantidad de polipropileno reciclado (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
-                        </div>
-                        <div className='flex w-full justify-end mt-2'>
-                            <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
-                        </div>
+                        {esMacrofibra &&
+                            <>
+                                <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona las materias primas que se usan para la fabricación del producto (en el caso de que se seleccione macrofibras de polipropileno):</p>
+                                <div className='flex'>
+                                    <input type="number" onBlur={sacarDato} name='A1_7' placeholder="Cantidad de polipropileno virgen (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                                </div>
+                                <div className='flex my-2'>
+                                    <input type="number" onBlur={sacarDato} name='A1_8' placeholder="Cantidad de polipropileno reciclado (kg)" className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3"></input>
+                                </div>
+                                <div className='flex w-full justify-end mt-2'>
+                                    <ArrowSmallRightIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
+                                </div>
+                            </>
+                        }
                     </div>
                     <div className='etapaA2' style={{
                         display: etapa === 'Etapa A2' ? 'block' : 'none',
@@ -122,7 +134,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         <input type="text" onMouseOut={sacarDato} name='A2_1' placeholder={object_A2_1 ? object_A2_1.valor : 'La ubicación del proveedor de materia prima'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que se recorren de la planta del proveedor a la planta de producción (ida):</p>
                         <input type="number" onMouseOut={sacarDato} name='A2_2' placeholder={object_A2_2 ? object_A2_2.valor : 'Los km que el proveedor recorre de ida'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
-                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km km que se recorren de la planta del producción a la planta de proveedor (vuelta):</p>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Los km que se recorren de la planta de producción a la planta de proveedor (vuelta):</p>
                         <input type="number" onMouseOut={sacarDato} name='A2_3' placeholder={'Los km que el proveedor recorre de regreso'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> El rendimiento de la unidad de transporte llena:</p>
                         <input type="text" onMouseOut={sacarDato} name='A2_4' placeholder={'El rendimiento de la unidad de transporte llena'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
