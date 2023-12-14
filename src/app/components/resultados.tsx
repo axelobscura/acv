@@ -128,10 +128,10 @@ export default function Resultados({datos}: {datos: any}) {
                     <thead>
                         <tr>
                             <th className='bg-customVerdeDos shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>Etapa</th>
-                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>tCO<sup>2</sup>e por consumo de combustible</th>
-                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>tCO<sup>2</sup>e por consumo de energía</th>
-                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>Total de tCO<sup>2</sup>e</th>
-                            <th className='bg-customVerdeDos text-1xl sm:text-xxs md:text-xs lg:text-base xl:text-xl shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)]'>KgCO<sup>2</sup>e/unidad declarada</th>
+                            <th className='bg-customVerdeDos text-sm sm:text-xxs md:text-xs lg:text-sm xl:text-sm shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)] p-3'>tCO<sup>2</sup>e por consumo de combustible</th>
+                            <th className='bg-customVerdeDos text-sm sm:text-xxs md:text-xs lg:text-sm xl:text-sm shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)] p-3'>tCO<sup>2</sup>e por consumo de energía</th>
+                            <th className='bg-customVerdeDos text-sm sm:text-xxs md:text-xs lg:text-sm xl:text-sm shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)] p-3'>Total de tCO<sup>2</sup>e</th>
+                            <th className='bg-customVerdeDos text-sm sm:text-xxs md:text-xs lg:text-sm xl:text-sm shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)] p-3'>KgCO<sup>2</sup>e/unidad declarada</th>
                         </tr>
                     </thead>
                     <tbody className='text-center'>

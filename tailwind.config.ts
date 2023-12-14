@@ -31,12 +31,6 @@ const config: Config = {
         'sm': '0.875rem',     // Small
         'base': '1rem',       // Base size (default)
         'lg': '1.125rem',     // Large
-
-
-
-
-
-        
         'xl': '1.25rem',      // Extra Large
         '2xl': '1.5rem',      // 2X Large
         // Add more custom font sizes as needed
