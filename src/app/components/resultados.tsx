@@ -93,23 +93,23 @@ export default function Resultados({datos}: {datos: any}) {
                     <tbody className='text-center'>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td className='bg-customVerdeDos'></td>
+                            <td className='bg-customVerdeDos'></td>
+                            <td className='bg-customVerdeDos'></td>
                             <td><b>{productoVal}</b></td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A2</td>
                             <td><b>12.73</b></td>
-                            <td><b></b></td>
+                            <td className='bg-customVerdeDos'><b></b></td>
                             <td><b>12.73</b></td>
                             <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A3</td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>3.61</b></td>
+                            <td><b>0.09</b></td>
+                            <td><b>3.70</b></td>
                             <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
                         </tr>
                     </tbody>
