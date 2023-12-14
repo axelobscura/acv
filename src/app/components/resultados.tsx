@@ -6,6 +6,19 @@ import SideBar from './sidebar';
 export default function Resultados({datos}: {datos: any}) {
     const [modalOpen, setModalOpen] = useState(false);
     const [productoVal, setProductoVal] = useState(0);
+    const [consumoGasolinaIda, setConsumoGasolinaIda] = useState(0);
+    const [consumoGasolinaVuelta, setConsumoGasolinaVuelta] = useState(0);
+    const [consumoGasolinaMes, setConsumoGasolinaMes] = useState(0);
+    const [consumoGasolinaAno, setConsumoGasolinaAno] = useState(0);
+
+    const [cotcoM, setcotcoM] = useState(0);
+    const [chtchM, setchtchM] = useState(0);
+    const [notnoM, setnotnoM] = useState(0);
+
+    const [cotcoT, setcotcoT] = useState(0);
+    const [chtchT, setchtchT] = useState(0);
+    const [notnoT, setnotnoT] = useState(0);
+
     const [poliVal, setPoliVal] = useState(0);
     //console.log('DATOS: ' + JSON.stringify(datos))
 
@@ -25,7 +38,14 @@ export default function Resultados({datos}: {datos: any}) {
     const polivirgen = datos.filter((nom: any) => nom.nombre === 'A1_7');
     const polireciclado = datos.filter((nom: any) => nom.nombre === 'A1_8');
 
+    const consumogasida = datos.filter((nom: any) => nom.nombre === 'A2_1');
+    const consumogasvuelta = datos.filter((nom: any) => nom.nombre === 'A2_2');
+    const frecuencia = datos.filter((nom: any) => nom.nombre === 'A2_6');
+
+    console.log(frecuencia[0]?.valor);
+
     useEffect(() => {
+        //A1
         if(productoValor === 'concreto'){
             setProductoVal(272.155);
         } else if(polivirgen && polireciclado) {
@@ -40,8 +60,32 @@ export default function Resultados({datos}: {datos: any}) {
         } else {
             setProductoVal(0);
         }
-    }, [])
-    
+        //A1
+        if(consumogasida){
+            console.log(consumogasida[0]?.valor)
+            setConsumoGasolinaIda((Number(consumogasida[0]?.valor) ? Number(consumogasida[0]?.valor) : 0) * 0.666666666666667);
+        }
+        if(consumogasvuelta){
+            console.log(consumogasvuelta[0]?.valor)
+            setConsumoGasolinaVuelta((Number(consumogasvuelta[0]?.valor) ? Number(consumogasvuelta[0]?.valor) : 0) * 0.5);
+        }
+        if(consumogasida && consumogasvuelta && frecuencia){
+            setConsumoGasolinaMes(consumoGasolinaIda + consumoGasolinaVuelta);
+            setConsumoGasolinaAno((consumoGasolinaIda + consumoGasolinaVuelta) * Number(frecuencia[0]?.valor));
+        }
+        if(consumoGasolinaAno){
+            setcotcoM(consumoGasolinaAno * 33.1404490848481 * 0.0000693);
+            setchtchM((consumoGasolinaAno * 33.1404490848481 * 0.000025) / 1000);
+            setnotnoM((consumoGasolinaAno * 33.1404490848481 * 0.000008) / 1000);
+            setcotcoT(consumoGasolinaAno * 33.1404490848481 * 0.0000693);
+            setchtchT(chtchM * 28);
+            setnotnoT(notnoM * 265);
+        }
+        //A2
+        //A2
+        //A3
+        //A3
+    })
     // RESIDUOS
 
     const rp = datos.filter((nom: any) => nom.nombre === 'Generación de RP (kg)');
@@ -96,14 +140,14 @@ export default function Resultados({datos}: {datos: any}) {
                             <td className='bg-customVerdeDos'></td>
                             <td className='bg-customVerdeDos'></td>
                             <td className='bg-customVerdeDos'></td>
-                            <td><b>{productoVal}</b></td>
+                            <td><b>{productoVal.toFixed(3)}</b></td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A2</td>
-                            <td><b>12.73</b></td>
+                            <td><b>{(cotcoT + chtchT + notnoT).toFixed(3)}</b></td>
                             <td className='bg-customVerdeDos'><b></b></td>
-                            <td><b>12.73</b></td>
-                            <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
+                            <td><b>{(cotcoT + chtchT + notnoT).toFixed(3)}</b></td>
+                            <td><b>{(((cotcoT + chtchT + notnoT)*1000)/375000).toFixed(3)}</b></td>
                         </tr>
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A3</td>
