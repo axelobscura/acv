@@ -161,7 +161,7 @@ export default function Resultados({datos}: {datos: any}) {
                             <td><b>3.61</b></td>
                             <td><b>{(energiaMWH).toFixed(3)}</b></td>
                             <td><b>{(energiaMWH + 3.61).toFixed(3)}</b></td>
-                            <td><b>{(((energiaMWH + 3.61)+1000)/Number(pt[0].valor)).toFixed(5)}</b></td>
+                            <td><b>{(((energiaMWH + 3.61)*1000)/Number(pt[0].valor)).toFixed(5)}</b></td>
                         </tr>
                     </tbody>
                 </table>
