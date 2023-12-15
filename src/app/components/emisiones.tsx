@@ -170,7 +170,7 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                             </label>
                             <label className="inline-flex items-center">
                                 <div className='flex flex-col'>
-                                    <span className="ml-2 font-orbitron text-gray-100 mb-2"><ArrowSmallRightIcon className="h-6 w-6 text-gray-300"/> Gas LP:</span>
+                                    <span className="flex ml-2 font-orbitron text-gray-100 mb-2"><ArrowSmallRightIcon className="h-6 w-6 text-gray-300"/> Gas LP:</span>
                                     <input type="number" onMouseOut={sacarDato} name='A3_6' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                                 </div>
                             </label>
