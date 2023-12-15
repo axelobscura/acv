@@ -108,7 +108,7 @@ export default function Resultados({datos}: {datos: any}) {
 
     const A1_0 = datos.filter((nom: any) => nom.nombre === 'primas');
 
-    //console.log('A1_0', A1_0)
+    console.log('A1_0', pt[0].valor)
 
     return (
         <div className="flex flex-col sm:flex-row w-full justify-space-evenly shadow-[inset_0_5px_10px_rgba(0,0,0,0.6)] p-5 rounded-2xl">
@@ -160,8 +160,8 @@ export default function Resultados({datos}: {datos: any}) {
                             <td className='bg-customVerdeUno text-center'>A3</td>
                             <td><b>3.61</b></td>
                             <td><b>{(energiaMWH).toFixed(3)}</b></td>
-                            <td><b>{(energiaMWH).toFixed(3) + 3.61}</b></td>
-                            <td><b>{((Math.random() * 9 + 1)/10).toFixed(2)}</b></td>
+                            <td><b>{(energiaMWH + 3.61).toFixed(3)}</b></td>
+                            <td><b>{(((energiaMWH + 3.61)+1000)/Number(pt[0].valor)).toFixed(5)}</b></td>
                         </tr>
                     </tbody>
                 </table>
