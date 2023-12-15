@@ -10,6 +10,7 @@ export default function Resultados({datos}: {datos: any}) {
     const [consumoGasolinaVuelta, setConsumoGasolinaVuelta] = useState(0);
     const [consumoGasolinaMes, setConsumoGasolinaMes] = useState(0);
     const [consumoGasolinaAno, setConsumoGasolinaAno] = useState(0);
+    const [energiaMWH, setEnergiaMWH] = useState(0);
 
     const [cotcoM, setcotcoM] = useState(0);
     const [chtchM, setchtchM] = useState(0);
@@ -42,7 +43,9 @@ export default function Resultados({datos}: {datos: any}) {
     const consumogasvuelta = datos.filter((nom: any) => nom.nombre === 'A2_2');
     const frecuencia = datos.filter((nom: any) => nom.nombre === 'A2_6');
 
-    console.log(frecuencia[0]?.valor);
+    const energiaKWH = datos.filter((nom: any) => nom.nombre === 'A3_1');
+
+    console.log(energiaKWH[0]?.valor);
 
     useEffect(() => {
         //A1
@@ -61,6 +64,7 @@ export default function Resultados({datos}: {datos: any}) {
             setProductoVal(0);
         }
         //A1
+        //A2
         if(consumogasida){
             console.log(consumogasida[0]?.valor)
             setConsumoGasolinaIda((Number(consumogasida[0]?.valor) ? Number(consumogasida[0]?.valor) : 0) * 0.666666666666667);
@@ -82,8 +86,11 @@ export default function Resultados({datos}: {datos: any}) {
             setnotnoT(notnoM * 265);
         }
         //A2
-        //A2
         //A3
+        if(energiaKWH){
+            setEnergiaMWH((Number(energiaKWH[0]?.valor) ? (Number(energiaKWH[0]?.valor / 1000) * 0.435) : 0))
+        }
+        //setEnergiaMWH
         //A3
     })
     // RESIDUOS
@@ -152,7 +159,7 @@ export default function Resultados({datos}: {datos: any}) {
                         <tr>
                             <td className='bg-customVerdeUno text-center'>A3</td>
                             <td><b>3.61</b></td>
-                            <td><b>0.09</b></td>
+                            <td><b>{(energiaMWH).toFixed(3)}</b></td>
                             <td><b>3.70</b></td>
                             <td><b>{(Math.random() * 9 + 1).toFixed(2)}</b></td>
                         </tr>

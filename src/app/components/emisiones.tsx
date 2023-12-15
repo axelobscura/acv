@@ -150,10 +150,39 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                     <div className='etapa A3' style={{
                         display: etapa === 'Etapa A3' ? 'block' : 'none'
                     }}>
-                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo total de energía eléctrica en kWh:</p>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo total de energía eléctrica anual en kWh:</p>
                         <input type="number" onMouseOut={sacarDato} name='A3_1' placeholder={'Consumo total de energía eléctrica en kWh'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo de combustibles fósiles en la planta:</p>
                         <input type="text" onMouseOut={sacarDato} name='A3_2' placeholder={'Consumo de combustibles fósiles en la planta'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                        <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo de combustible total en la planta (fija) para el año de declaración:</p>
+                        <div className="flex items-center justify-between">
+                            <label className="inline-flex items-center mr-2">
+                                <div className='flex flex-col'>
+                                    <span className="ml-2 font-orbitron text-gray-100 mb-2">Consumo de gasolina:</span>
+                                    <input type="number" onMouseOut={sacarDato} name='A3_4' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                                </div>
+                            </label>
+                            <label className="inline-flex items-center mr-2">
+                                <div className='flex flex-col'>
+                                    <span className="ml-2 font-orbitron text-gray-100 mb-2">Diésel:</span>
+                                    <input type="number" onMouseOut={sacarDato} name='A3_5' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                                </div>
+                            </label>
+                            <label className="inline-flex items-center">
+                                <div className='flex flex-col'>
+                                    <span className="ml-2 font-orbitron text-gray-100 mb-2">Gas LP:</span>
+                                    <input type="number" onMouseOut={sacarDato} name='A3_6' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                                </div>
+                            </label>
+                            <label className="inline-flex items-center ml-2">
+                                <div className='flex flex-col'>
+                                    <span className="ml-2 font-orbitron text-gray-100 mb-2">Gas Natural:</span>
+                                    <input type="number" onMouseOut={sacarDato} name='A3_7' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
+                                </div>
+                            </label>
+                        </div>
+
+
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo de combustibles fósiles en las unidades móviles de la empresa:</p>
                         <input type="number" onMouseOut={sacarDato} name='A3_3' placeholder={'Consumo de combustibles fósiles en las unidades móviles de la empresa'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <div className='flex w-full justify-end mt-2'>
