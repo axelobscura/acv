@@ -181,8 +181,6 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                                 </div>
                             </label>
                         </div>
-
-
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Consumo de combustibles fósiles en las unidades móviles de la empresa:</p>
                         <input type="number" onMouseOut={sacarDato} name='A3_3' placeholder={'Consumo de combustibles fósiles en las unidades móviles de la empresa'} className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full"></input>
                         <div className="flex items-center justify-between mt-3">
@@ -211,8 +209,6 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                                 </div>
                             </label>
                         </div>
-
-
                         <div className='flex w-full justify-end mt-2'>
                             <ArrowSmallLeftIcon className="h-10 w-10 text-gray-300" onClick={() => sacaValor('Etapa A2')} />
                         </div>

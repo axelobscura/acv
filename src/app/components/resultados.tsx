@@ -160,7 +160,7 @@ export default function Resultados({datos}: {datos: any}) {
                             <td className='bg-customVerdeUno text-center'>A3</td>
                             <td><b>3.61</b></td>
                             <td><b>{(energiaMWH).toFixed(3)}</b></td>
-                            <td><b>3.70</b></td>
+                            <td><b>{(energiaMWH).toFixed(3) + 3.61}</b></td>
                             <td><b>{((Math.random() * 9 + 1)/10).toFixed(2)}</b></td>
                         </tr>
                     </tbody>
