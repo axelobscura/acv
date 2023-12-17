@@ -100,16 +100,25 @@ export default function Emisiones({ setLaEtapa, etapa, agregarDatos, losdatos } 
                         </div>
                         
                         <p className='flex font-orbitron text-gray-100 mt-3 mb-2'><ChevronRightIcon className="h-6 w-6 text-gray-300" /> Selecciona el producto</p>
-                        <div className="flex items-center justify-center">
-                            <label className="inline-flex items-center m-3">
-                                <input onChange={sacarDato} type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="A1_6" value="concreto"></input>
-                                <span className="ml-2 font-orbitron text-gray-100">Concreto</span>
-                            </label>
-                            <label className="inline-flex items-center m-3">
-                                <input onChange={sacarDato} type="radio" className="form-radio accent-customVerdeDos h-7 w-7" name="A1_6" value="macrofibras"></input>
-                                <span className="ml-2 font-orbitron text-gray-100">Macrofibras</span>
-                            </label>
-                        </div>
+                        <select onChange={sacarDato} name='A1_6' className="font-orbitron border border-gray-300 rounded-md px-4 py-2 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full mx-3">
+                            <option value='concreto'>Concreto</option>
+                            <option value='macrofibras'>Macrofibras</option>
+                            <option value='grava'>Grava</option>
+                            <option value='arena'>Arena</option>
+                            <option value='acero'>Acero</option>
+                            <option value='prefabricados'>Prefabricados</option>
+                            <option value='agua'>Agua</option>
+                            <option value='aditivos acelerantes'>Aditivos acelerantes</option>
+                            <option value='aditivos retardantes'>Aditivos retardantes</option>
+                            <option value='aditivos reductores'>Aditivos reductores</option>
+                            <option value='aditivos de secado rápido'>Aditivos de secado rápido</option>
+                            <option value='aditivos plastificantes'>Aditivos plastificantes</option>
+                            <option value='aditivos de control de la hidración'>Aditivos de control de la hidración</option>
+                            <option value='aditivos inhibidores de corrosión'>Aditivos inhibidores de corrosión</option>
+                            <option value='aditivos reductores de retracción'>Aditivos reductores de retracción</option>
+                            <option value='aditivos inhibidores de álcali-agregado'>Aditivos inhibidores de álcali-agregado</option>
+                            <option value='aditivos colorantes'>Aditivos colorantes</option>
+                        </select>
                         
                         {esMacrofibra &&
                             <>
