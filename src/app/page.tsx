@@ -10,8 +10,13 @@ export default function Home() {
 
   const checkUser = (e:any) => {
     e.preventDefault();
-    console.log('checkUser');
-    setLogged(true);
+    let email = e.target.email.value;
+    let pwd = e.target.password.value;
+    if(email === "ruribe@imcyc.com" && pwd === "1234"){
+      setLogged(true);
+    } else {
+      setLogged(false);
+    }
   }
 
   return (
@@ -22,7 +27,7 @@ export default function Home() {
       'backgroundPosition': 'center',
       'backgroundColor': '#222222',
     }}>
-      <Login checkUser={(e:any) => checkUser(e)}/>
+      {!logged &&<Login checkUser={(e:any) => checkUser(e)}/>}
       {logged &&
         <div className="grid grid-cols-1">
           <div>
